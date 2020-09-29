@@ -1,0 +1,14 @@
+C:\Users\HP\Desktop\C#\Object\bin\Debug\Object.exe.config
+C:\Users\HP\Desktop\C#\Object\bin\Debug\Object.exe
+C:\Users\HP\Desktop\C#\Object\bin\Debug\Object.pdb
+C:\Users\HP\Desktop\C#\Object\obj\Debug\Object.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\C#\Object\obj\Debug\Object.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\C#\Object\obj\Debug\Object.exe
+C:\Users\HP\Desktop\C#\Object\obj\Debug\Object.pdb
+D:\Csharp\Object\bin\Debug\Object.exe.config
+D:\Csharp\Object\bin\Debug\Object.exe
+D:\Csharp\Object\bin\Debug\Object.pdb
+D:\Csharp\Object\obj\Debug\Object.csprojAssemblyReference.cache
+D:\Csharp\Object\obj\Debug\Object.csproj.CoreCompileInputs.cache
+D:\Csharp\Object\obj\Debug\Object.exe
+D:\Csharp\Object\obj\Debug\Object.pdb
