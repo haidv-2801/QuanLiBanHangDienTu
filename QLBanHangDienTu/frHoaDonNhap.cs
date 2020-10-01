@@ -30,6 +30,8 @@ namespace QLBanHangDienTu
             txtTongtien.Text = "0";
             //fillAllCbb();
             btnControl(true);
+            txtSoluong.Enabled = false;
+            txtGiamgia.Enabled = false;
         }
 
         private void btnControl(bool status)
@@ -57,6 +59,7 @@ namespace QLBanHangDienTu
 
         private void FrHoaDonNhap_Load(object sender, EventArgs e)
         {
+          
             tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonnhap");
             boxControl("");
             btnControl(false);
@@ -112,18 +115,23 @@ namespace QLBanHangDienTu
             int index = e.RowIndex;
             if (index >= 0 && index <= tbHDN.Rows.Count)
             {
-                string id = tbHDN.Rows[index].Cells["SoHDN"].Value.ToString();
-                //MessageBox.Show(id);
-                tbHDN.DataSource = BLL_getData.getTableById("pro_getCTHDN_ById", id);
-                tbHDN.Columns[0].HeaderText = "Mã hàng";
-                tbHDN.Columns[1].HeaderText = "Tên hàng";
-                tbHDN.Columns[2].HeaderText = "Số lượng";
-                tbHDN.Columns[3].HeaderText = "Đơn giá";
-                tbHDN.Columns[4].HeaderText = "Giảm giá";
-                tbHDN.Columns[5].HeaderText = "Thành tiền";
+                try
+                {
+                    string id = tbHDN.Rows[index].Cells["SoHDN"].Value.ToString();
+                    //MessageBox.Show(id);
+                    tbHDN.DataSource = BLL_getData.getTableById("pro_getCTHDN_ById", id);
+                    tbHDN.Columns[0].HeaderText = "Mã hàng";
+                    tbHDN.Columns[1].HeaderText = "Tên hàng";
+                    tbHDN.Columns[2].HeaderText = "Số lượng";
+                    tbHDN.Columns[3].HeaderText = "Đơn giá";
+                    tbHDN.Columns[4].HeaderText = "Giảm giá";
+                    tbHDN.Columns[5].HeaderText = "Thành tiền";
+                }
+                catch (Exception)
+                {
+
+                }
             }
-
-
         }
 
         private void TbHDN_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -148,7 +156,7 @@ namespace QLBanHangDienTu
             if (string.IsNullOrWhiteSpace(txtSoluong.Text) == false)
             {
                 int soluong = int.Parse(txtSoluong.Text);
-                double dongia = double.Parse(txtDongia.Text);
+                double dongia = float.Parse(txtDongia.Text);
                 double thanhtien = dongia * soluong - 1.0 * (dongia * soluong) * giamgia / 100;
                 txtThanhtien.Text = thanhtien.ToString();
             }
@@ -177,7 +185,44 @@ namespace QLBanHangDienTu
         private void BtnLuu_Click(object sender, EventArgs e)
         {
 
+            if (cbbMaNCC.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chọn nhà cung cấp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbbMaNCC.Focus();
+                return;
+            }
 
+            if (cbbManv.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chọn nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbbManv.Focus();
+                return;
+            }
+
+            if (cbbMahang.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chọn hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbbMahang.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSoluong.Text) == true)
+            {
+                MessageBox.Show("Nhập số lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSoluong.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtGiamgia.Text) == true)
+            {
+                MessageBox.Show("Nhập giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGiamgia.Focus();
+                return;
+            }
+
+            
+
+           
             Obj_HoaDonNhap obj_HoaDonNhap = new Obj_HoaDonNhap(
                 txtSohdn.Text,
                 cbbManv.SelectedValue.ToString(),
@@ -188,6 +233,12 @@ namespace QLBanHangDienTu
 
             BLL_HoaDonNhap.insertIntoHoadonnhap(obj_HoaDonNhap);
 
+
+            if(BLL_CTHoaDonNhap.isDuplicateMahanghoa(txtSohdn.Text, cbbMahang.SelectedValue.ToString()))
+            {
+                MessageBox.Show($"Mã hàng {cbbMahang.SelectedValue.ToString()} đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
 
             Obj_CTHoaDonNhap obj_CTHoaDonNhap = new Obj_CTHoaDonNhap(
@@ -201,10 +252,14 @@ namespace QLBanHangDienTu
             BLL_CTHoaDonNhap.insertIntoCTHoadonnhap(obj_CTHoaDonNhap);
 
             tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonnhap");
+            MessageBox.Show($"Thêm thành công {txtSoluong.Text} {txtTenhang.Text} Mã hóa đơn:{txtSohdn.Text}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         private void BtnLammoi_Click(object sender, EventArgs e)
         {
+            txtSoluong.Enabled = false;
+            txtGiamgia.Enabled = false;
             reset();
         }
 
@@ -267,7 +322,8 @@ namespace QLBanHangDienTu
 
         private void CbbTenhang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            txtGiamgia.Enabled = true;
+            txtSoluong.Enabled = true;
             DataTable tmp = BLL_getData.getTableById("pro_getHanghoaById", cbbMahang.SelectedValue.ToString());
             if (tmp.Rows.Count > 0)
             {

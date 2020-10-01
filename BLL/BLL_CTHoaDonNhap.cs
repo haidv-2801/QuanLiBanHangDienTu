@@ -14,5 +14,10 @@ namespace BLL
         {
             CTHoaDonNhapDAL.insert(obj_CTHoaDonNhap);
         }
+
+        public static bool isDuplicateMahanghoa(string Sohdn, string Mahang)
+        {
+            return CTHoaDonNhapDAL.isDuplicateMaHH(Sohdn, Mahang);
+        }
     }
 }

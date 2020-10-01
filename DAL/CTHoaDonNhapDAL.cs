@@ -33,16 +33,25 @@ namespace DAL
 
         }
 
-        /*public static void delete(string id)
+        public static bool isDuplicateMaHH(string Sohdn, string Mahanghoa)
         {
-            SqlCommand cmd = new SqlCommand("proc_deleteFromHoadonnhap", mycon);
+            SqlCommand cmd = new SqlCommand("DuplicateMahanghoa", mycon);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("", id);
+            cmd.Parameters.AddWithValue("@Sohdn", Sohdn);
+            cmd.Parameters.AddWithValue("@Mahang", Mahanghoa);
+
+            DataTable tb = new DataTable();
 
             mycon.Open();
-            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter adp = new SqlDataAdapter();
+            adp.SelectCommand = cmd;
+            adp.Fill(tb);
+
             mycon.Close();
-        }*/
+
+            return tb.Rows.Count > 0;
+        }
     }
 }
