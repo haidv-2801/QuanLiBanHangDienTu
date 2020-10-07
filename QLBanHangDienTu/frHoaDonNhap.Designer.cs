@@ -41,6 +41,7 @@
             this.cbbManv = new System.Windows.Forms.ComboBox();
             this.dtpNgaytao = new System.Windows.Forms.DateTimePicker();
             this.txtNameEmp = new System.Windows.Forms.TextBox();
+            this.btnTaomoi = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSohdn = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.btnLammoi = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnTaomoi = new System.Windows.Forms.Button();
             this.txtThanhtien = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtGiamgia = new System.Windows.Forms.TextBox();
@@ -226,6 +226,16 @@
             this.txtNameEmp.Size = new System.Drawing.Size(160, 22);
             this.txtNameEmp.TabIndex = 21;
             // 
+            // btnTaomoi
+            // 
+            this.btnTaomoi.Location = new System.Drawing.Point(29, 173);
+            this.btnTaomoi.Name = "btnTaomoi";
+            this.btnTaomoi.Size = new System.Drawing.Size(133, 30);
+            this.btnTaomoi.TabIndex = 37;
+            this.btnTaomoi.Text = "Tạo Mới Hóa Đơn";
+            this.btnTaomoi.UseVisualStyleBackColor = true;
+            this.btnTaomoi.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -336,7 +346,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(695, 321);
+            this.btnXoa.Location = new System.Drawing.Point(513, 321);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 28);
             this.btnXoa.TabIndex = 44;
@@ -401,7 +411,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(500, 320);
+            this.btnSua.Location = new System.Drawing.Point(608, 319);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(81, 30);
             this.btnSua.TabIndex = 38;
@@ -411,23 +421,13 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(599, 321);
+            this.btnLuu.Location = new System.Drawing.Point(718, 320);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(81, 30);
             this.btnLuu.TabIndex = 38;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.BtnLuu_Click);
-            // 
-            // btnTaomoi
-            // 
-            this.btnTaomoi.Location = new System.Drawing.Point(29, 173);
-            this.btnTaomoi.Name = "btnTaomoi";
-            this.btnTaomoi.Size = new System.Drawing.Size(133, 30);
-            this.btnTaomoi.TabIndex = 37;
-            this.btnTaomoi.Text = "Tạo Mới Hóa Đơn";
-            this.btnTaomoi.UseVisualStyleBackColor = true;
-            this.btnTaomoi.Click += new System.EventHandler(this.Button2_Click);
             // 
             // txtThanhtien
             // 

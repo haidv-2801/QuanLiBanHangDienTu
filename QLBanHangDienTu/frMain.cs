@@ -19,46 +19,31 @@ namespace QLBanHangDienTu
         {
             InitializeComponent();
         }
-
-       
         private void HàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.HasChildren)
-            {
-                DisposeAllButThis();
-            }
+            closeDuplicateForm();
             frDMHanghoa frHH = new frDMHanghoa();
             frHH.MdiParent = this;
             frHH.Dock = DockStyle.Fill;
             frHH.Show();
         }
 
+        private void closeDuplicateForm()
+        {
+            if (this.MdiChildren.FirstOrDefault() != null)
+                this.MdiChildren.FirstOrDefault().Close();
+        }
         private void HóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.HasChildren)
-            {
-                DisposeAllButThis();
-            }
+            closeDuplicateForm();
             frHoaDonNhap frhdn = new frHoaDonNhap();
             frhdn.MdiParent = this;
             frhdn.Dock = DockStyle.Fill;
             frhdn.Show();
         }
-
         private void ThoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        
-
-        public void DisposeAllButThis()
-        {
-            foreach (Form frm in this.MdiChildren)
-            {
-                frm.Dispose();
-                frm.Close();
-            }
         }
     }
 }

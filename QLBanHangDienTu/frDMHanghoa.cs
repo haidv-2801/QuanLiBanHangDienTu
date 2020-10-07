@@ -30,11 +30,11 @@ namespace QLBanHangDienTu
         private void Button1_Click(object sender, EventArgs e)
         {
             Obj_HangHoa hangHoaObj = new Obj_HangHoa(
-                textBox1.Text,
-                textBox2.Text,
-                int.Parse(textBox3.Text),
-                float.Parse(textBox4.Text),
-                float.Parse(textBox5.Text)
+                txtMahang.Text,
+                txtTenhang.Text,
+                int.Parse(txtSoluong.Text),
+                float.Parse(txtDonggianhap.Text),
+                float.Parse(txtDongiaban.Text)
             );
 
             BLL_DMHangHoa.insertIntoDMHangHoa(hangHoaObj);
@@ -43,7 +43,7 @@ namespace QLBanHangDienTu
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            textBox1.Text = Automatically.autoGetKey("select dbo.getKey()");
+            txtMahang.Text = Automatically.autoGetKey("select dbo.getKey()").Trim();
         }
 
         public void showData()
@@ -55,7 +55,7 @@ namespace QLBanHangDienTu
             dataGridView1.Columns[2].HeaderText = "Số lượng";
             dataGridView1.Columns[3].HeaderText = "Đơn giá nhập";
             dataGridView1.Columns[4].HeaderText = "Đơn giá bán";
-            dataGridView1.Columns[5].Visible = false;
+           // dataGridView1.Columns[5].Visible = false;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -65,17 +65,17 @@ namespace QLBanHangDienTu
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            BLL.BLL_DMHangHoa.deleteFromDMHangHoa(textBox1.Text);
+            BLL.BLL_DMHangHoa.deleteFromDMHangHoa(txtMahang.Text);
             showData();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            textBox1.ResetText();
-            textBox2.ResetText();
-            textBox3.ResetText();
-            textBox4.ResetText();
-            textBox5.ResetText();
+            txtMahang.ResetText();
+            txtTenhang.ResetText();
+            txtSoluong.ResetText();
+            txtDonggianhap.ResetText();
+            txtDongiaban.ResetText();
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -83,11 +83,11 @@ namespace QLBanHangDienTu
             int index = e.RowIndex;
             if (index >= 0)
             {
-                textBox1.Text = dataGridView1.Rows[index].Cells["Mahang"].Value.ToString();
-                textBox2.Text = dataGridView1.Rows[index].Cells["Tenhang"].Value.ToString();
-                textBox3.Text = dataGridView1.Rows[index].Cells["Soluong"].Value.ToString();
-                textBox4.Text = dataGridView1.Rows[index].Cells["Dongianhap"].Value.ToString();
-                textBox5.Text = dataGridView1.Rows[index].Cells["Dongiaban"].Value.ToString();
+                txtMahang.Text = dataGridView1.Rows[index].Cells["Mahang"].Value.ToString();
+                txtTenhang.Text = dataGridView1.Rows[index].Cells["Tenhang"].Value.ToString();
+                txtSoluong.Text = dataGridView1.Rows[index].Cells["Soluong"].Value.ToString();
+                txtDonggianhap.Text = dataGridView1.Rows[index].Cells["Dongianhap"].Value.ToString();
+                txtDongiaban.Text = dataGridView1.Rows[index].Cells["Dongiaban"].Value.ToString();
 
                 try
                 {
@@ -109,6 +109,17 @@ namespace QLBanHangDienTu
                 ptbAnh.Load(OD.FileName);
             }
 
+        }
+
+        private void TextBox4_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtDonggianhap.Text) == false)
+            {
+                float dongianhap = float.Parse(txtDonggianhap.Text);
+                float dongiaban = dongianhap + (dongianhap * 1 / 10);
+                txtDongiaban.Text = ((Decimal)dongiaban).ToString();
+            }
+           
         }
     }
 }
