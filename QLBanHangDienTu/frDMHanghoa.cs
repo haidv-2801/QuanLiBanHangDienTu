@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Object;
 using Handling;
 using BLL;
+using System.IO;
+
 
 namespace QLBanHangDienTu
 {
@@ -46,7 +48,14 @@ namespace QLBanHangDienTu
 
         public void showData()
         {
+
             dataGridView1.DataSource = BLL_getData.getTable("pro_getAllHangHoa");
+            dataGridView1.Columns[0].HeaderText = "Mã hàng";
+            dataGridView1.Columns[1].HeaderText = "Tên hàng";
+            dataGridView1.Columns[2].HeaderText = "Số lượng";
+            dataGridView1.Columns[3].HeaderText = "Đơn giá nhập";
+            dataGridView1.Columns[4].HeaderText = "Đơn giá bán";
+            dataGridView1.Columns[5].Visible = false;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -79,11 +88,26 @@ namespace QLBanHangDienTu
                 textBox3.Text = dataGridView1.Rows[index].Cells["Soluong"].Value.ToString();
                 textBox4.Text = dataGridView1.Rows[index].Cells["Dongianhap"].Value.ToString();
                 textBox5.Text = dataGridView1.Rows[index].Cells["Dongiaban"].Value.ToString();
+
+                try
+                {
+                    byte[] img = (byte[])dataGridView1.Rows[index].Cells["Anh"].Value;
+                    ptbAnh.Image = Image.FromStream(new MemoryStream(img));
+                }
+                catch (Exception) { }
             }
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
+            OpenFileDialog OD = new OpenFileDialog();
+            OD.FileName = "";
+            OD.Filter = "Supported image|*jpg;*jpeg;*.png";
+            if (OD.ShowDialog() == DialogResult.OK)
+            {
+                ptbAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+                ptbAnh.Load(OD.FileName);
+            }
 
         }
     }

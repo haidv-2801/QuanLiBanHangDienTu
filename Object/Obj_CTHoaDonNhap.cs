@@ -14,8 +14,9 @@ namespace Object
         private float DonGia;
         private int GiamGia;
         private float ThanhTien;
+        private string TenHang;
 
-        public Obj_CTHoaDonNhap(string soHDN, string maHang, int soLuong, float donGia, int giamGia, float thanhTien)
+        public Obj_CTHoaDonNhap(string soHDN, string maHang, int soLuong, float donGia, int giamGia, float thanhTien, string tenHang)
         {
             SoHDN1 = soHDN;
             MaHang1 = maHang;
@@ -23,6 +24,7 @@ namespace Object
             DonGia1 = donGia;
             GiamGia1 = giamGia;
             ThanhTien1 = thanhTien;
+            TenHang1 = tenHang;
         }
 
         public string SoHDN1 { get => SoHDN; set => SoHDN = value; }
@@ -31,5 +33,6 @@ namespace Object
         public float DonGia1 { get => DonGia; set => DonGia = value; }
         public int GiamGia1 { get => GiamGia; set => GiamGia = value; }
         public float ThanhTien1 { get => ThanhTien; set => ThanhTien = value; }
+        public string TenHang1 { get => TenHang; set => TenHang = value; }
     }
 }

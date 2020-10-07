@@ -7,6 +7,7 @@ using Object;
 using System.Data.SqlClient;
 using System.Data;
 using Handling;
+using System.Drawing;
 
 namespace DAL
 {
@@ -18,7 +19,6 @@ namespace DAL
         {
             SqlCommand cmd = new SqlCommand("proc_insertIntoHangHoa", mycon);
             cmd.CommandType = CommandType.StoredProcedure;
-
 
             cmd.Parameters.AddWithValue("@Mahang", hangHoaObj.MaHang1);
             cmd.Parameters.AddWithValue("@Tenhang", hangHoaObj.TenHang1);

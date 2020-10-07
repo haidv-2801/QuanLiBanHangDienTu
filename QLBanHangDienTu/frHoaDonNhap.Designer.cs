@@ -48,6 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnThemvaogio = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@
             this.lblQuaylai = new System.Windows.Forms.Label();
             this.cbbMahang = new System.Windows.Forms.ComboBox();
             this.btnLammoi = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnTaomoi = new System.Windows.Forms.Button();
             this.txtThanhtien = new System.Windows.Forms.TextBox();
@@ -118,13 +120,14 @@
             this.groupBox1.Controls.Add(this.cbbManv);
             this.groupBox1.Controls.Add(this.dtpNgaytao);
             this.groupBox1.Controls.Add(this.txtNameEmp);
+            this.groupBox1.Controls.Add(this.btnTaomoi);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtSohdn);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(3, 44);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(995, 182);
+            this.groupBox1.Size = new System.Drawing.Size(995, 219);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
@@ -279,6 +282,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnThemvaogio);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.label9);
@@ -286,8 +290,8 @@
             this.groupBox2.Controls.Add(this.lblQuaylai);
             this.groupBox2.Controls.Add(this.cbbMahang);
             this.groupBox2.Controls.Add(this.btnLammoi);
+            this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnLuu);
-            this.groupBox2.Controls.Add(this.btnTaomoi);
             this.groupBox2.Controls.Add(this.txtThanhtien);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.txtGiamgia);
@@ -308,6 +312,17 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin các mặt hàng";
+            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
+            // 
+            // btnThemvaogio
+            // 
+            this.btnThemvaogio.Location = new System.Drawing.Point(403, 319);
+            this.btnThemvaogio.Name = "btnThemvaogio";
+            this.btnThemvaogio.Size = new System.Drawing.Size(81, 30);
+            this.btnThemvaogio.TabIndex = 46;
+            this.btnThemvaogio.Text = "Thêm";
+            this.btnThemvaogio.UseVisualStyleBackColor = true;
+            this.btnThemvaogio.Click += new System.EventHandler(this.BtnThemvaogio_Click);
             // 
             // label18
             // 
@@ -321,12 +336,13 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(636, 317);
+            this.btnXoa.Location = new System.Drawing.Point(695, 321);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 25);
+            this.btnXoa.Size = new System.Drawing.Size(75, 28);
             this.btnXoa.TabIndex = 44;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.BtnXoa_Click);
             // 
             // label9
             // 
@@ -375,19 +391,29 @@
             // 
             // btnLammoi
             // 
-            this.btnLammoi.Location = new System.Drawing.Point(425, 315);
+            this.btnLammoi.Location = new System.Drawing.Point(309, 319);
             this.btnLammoi.Name = "btnLammoi";
-            this.btnLammoi.Size = new System.Drawing.Size(77, 27);
+            this.btnLammoi.Size = new System.Drawing.Size(77, 30);
             this.btnLammoi.TabIndex = 39;
             this.btnLammoi.Text = "Làm mới";
             this.btnLammoi.UseVisualStyleBackColor = true;
             this.btnLammoi.Click += new System.EventHandler(this.BtnLammoi_Click);
             // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(500, 320);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(81, 30);
+            this.btnSua.TabIndex = 38;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.Sua_Click);
+            // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(522, 316);
+            this.btnLuu.Location = new System.Drawing.Point(599, 321);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(81, 27);
+            this.btnLuu.Size = new System.Drawing.Size(81, 30);
             this.btnLuu.TabIndex = 38;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -395,11 +421,11 @@
             // 
             // btnTaomoi
             // 
-            this.btnTaomoi.Location = new System.Drawing.Point(311, 315);
+            this.btnTaomoi.Location = new System.Drawing.Point(29, 173);
             this.btnTaomoi.Name = "btnTaomoi";
-            this.btnTaomoi.Size = new System.Drawing.Size(79, 27);
+            this.btnTaomoi.Size = new System.Drawing.Size(133, 30);
             this.btnTaomoi.TabIndex = 37;
-            this.btnTaomoi.Text = "Tạo mới";
+            this.btnTaomoi.Text = "Tạo Mới Hóa Đơn";
             this.btnTaomoi.UseVisualStyleBackColor = true;
             this.btnTaomoi.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -462,6 +488,7 @@
             this.txtDongia.ReadOnly = true;
             this.txtDongia.Size = new System.Drawing.Size(171, 22);
             this.txtDongia.TabIndex = 30;
+            this.txtDongia.TextChanged += new System.EventHandler(this.TxtSoluong_TextChanged);
             // 
             // label14
             // 
@@ -626,5 +653,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnThemvaogio;
+        private System.Windows.Forms.Button btnSua;
     }
 }

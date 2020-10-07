@@ -49,8 +49,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button6 = new System.Windows.Forms.Button();
+            this.ptbAnh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -166,7 +169,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(634, 200);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 28);
+            this.button2.Size = new System.Drawing.Size(86, 28);
             this.button2.TabIndex = 4;
             this.button2.Text = "Sửa";
             this.button2.UseVisualStyleBackColor = true;
@@ -188,7 +191,7 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(871, 200);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 28);
+            this.button4.Size = new System.Drawing.Size(83, 28);
             this.button4.TabIndex = 4;
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = true;
@@ -215,6 +218,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ptbAnh);
             this.groupBox1.Location = new System.Drawing.Point(789, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 173);
@@ -230,13 +234,21 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(697, 29);
+            this.button6.Location = new System.Drawing.Point(683, 43);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(86, 30);
             this.button6.TabIndex = 7;
             this.button6.Text = "Chọn ảnh";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
+            // ptbAnh
+            // 
+            this.ptbAnh.Location = new System.Drawing.Point(0, 18);
+            this.ptbAnh.Name = "ptbAnh";
+            this.ptbAnh.Size = new System.Drawing.Size(199, 155);
+            this.ptbAnh.TabIndex = 0;
+            this.ptbAnh.TabStop = false;
             // 
             // frDMHanghoa
             // 
@@ -267,6 +279,8 @@
             this.Load += new System.EventHandler(this.FrDMHanghoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +308,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.PictureBox ptbAnh;
     }
 }

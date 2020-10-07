@@ -16,7 +16,10 @@ namespace QLBanHangDienTu
 {
     public partial class frHoaDonNhap : Form
     {
-        DataTable tbnv, tbhh, tbncc;
+        DataTable tbnv, tbhh, tbncc, tbTemp;
+        List<Obj_CTHoaDonNhap> listCTHDBTemp = new List<Obj_CTHoaDonNhap>();
+
+        int idOfRowForDel = -1;
 
         public frHoaDonNhap()
         {
@@ -26,9 +29,30 @@ namespace QLBanHangDienTu
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            if(listCTHDBTemp.Count > 0)
+            {
+                DialogResult res = MessageBox.Show("Chưa lưu, Có muốn tiếp tục?", "Thông báo", MessageBoxButtons.YesNo);
+                if (res == DialogResult.No)
+                {
+                    listCTHDBTemp.Clear();
+                    reset();
+                }
+                else
+                    return;
+            }
+            tbTemp = new DataTable();
+            
+            tbTemp.Columns.Add("Mã hàng");
+            tbTemp.Columns.Add("Tên hàng");
+            tbTemp.Columns.Add("Số lượng");
+            tbTemp.Columns.Add("Đơn giá");
+            tbTemp.Columns.Add("Giảm giá");
+            tbTemp.Columns.Add("Thành tiền");
+
+            tbHDN.DataSource = tbTemp;
             txtSohdn.Text = Automatically.CreateKey("HDN");
+
             txtTongtien.Text = "0";
-            //fillAllCbb();
             btnControl(true);
             txtSoluong.Enabled = false;
             txtGiamgia.Enabled = false;
@@ -46,7 +70,6 @@ namespace QLBanHangDienTu
             txtTimkiem.Enabled = status;
             txtSoluong.Enabled = status;
             txtGiamgia.Enabled = status;
-
         }
 
         private void boxControl(string content)
@@ -57,9 +80,16 @@ namespace QLBanHangDienTu
             txtSohdn.Text = content;
         }
 
+        private void resetValue()
+        {
+            foreach (Control ctl in this.Controls)
+                if (ctl is TextBox)
+                    ctl.Text = "";
+            txtSohdn.Focus();
+        }
+
         private void FrHoaDonNhap_Load(object sender, EventArgs e)
         {
-          
             tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonnhap");
             boxControl("");
             btnControl(false);
@@ -112,6 +142,7 @@ namespace QLBanHangDienTu
 
         private void TbHDN_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+          
             int index = e.RowIndex;
             if (index >= 0 && index <= tbHDN.Rows.Count)
             {
@@ -136,10 +167,20 @@ namespace QLBanHangDienTu
 
         private void TbHDN_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            idOfRowForDel = e.RowIndex;
+        
             if (e.RowIndex == tbHDN.Rows.Count - 1)
             {
+                if (listCTHDBTemp.Count > 0)
+                {
+                    DialogResult res = MessageBox.Show("Bạn chưa lưu hóa đơn, vẫn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo);
+                    if (res == DialogResult.No)
+                        return;
+                    else { listCTHDBTemp.Clear(); reset(); return; }
+                }
                 tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonnhap");
             }
+               
         }
 
         private void LblQuaylai_Click(object sender, EventArgs e)
@@ -149,80 +190,57 @@ namespace QLBanHangDienTu
 
         private void TxtSoluong_TextChanged(object sender, EventArgs e)
         {
-            int giamgia = 0;
-
-            if (string.IsNullOrWhiteSpace(txtGiamgia.Text) == false)
-                giamgia = int.Parse(txtGiamgia.Text);
-            if (string.IsNullOrWhiteSpace(txtSoluong.Text) == false)
+            try
             {
-                int soluong = int.Parse(txtSoluong.Text);
-                double dongia = float.Parse(txtDongia.Text);
-                double thanhtien = dongia * soluong - 1.0 * (dongia * soluong) * giamgia / 100;
-                txtThanhtien.Text = thanhtien.ToString();
+                int giamgia = 0;
+
+                if (string.IsNullOrWhiteSpace(txtGiamgia.Text) == false)
+                    giamgia = int.Parse(txtGiamgia.Text);
+                if (string.IsNullOrWhiteSpace(txtSoluong.Text) == false)
+                {
+                    int soluong = int.Parse(txtSoluong.Text);
+                    long dongia = long.Parse(txtDongia.Text);
+                    long thanhtien = dongia * soluong - (dongia * soluong) * giamgia / 100;
+                    txtThanhtien.Text = ((Decimal) thanhtien).ToString();
+                }
+                else txtThanhtien.Text = "0";
             }
-            else txtThanhtien.Text = "0";
+            catch  { }
+            
         }
 
         private void TxtGiamgia_TextChanged(object sender, EventArgs e)
         {
-            int i = 0;
-            txtGiamgia.Text = int.TryParse(txtGiamgia.Text, out i) == false || i < 0 || i > 100 ? "" : i.ToString();
-
-            if (string.IsNullOrWhiteSpace(txtSoluong.Text) == false)
+            try
             {
-                if (string.IsNullOrWhiteSpace(txtGiamgia.Text) == false)
-                {
-                    int giamgia = int.Parse(txtGiamgia.Text);
-                    int soluong = int.Parse(txtSoluong.Text);
-                    double dongia = double.Parse(txtDongia.Text);
-                    double thanhtien = dongia * soluong - 1.0 * (dongia * soluong) * giamgia / 100;
-                    txtThanhtien.Text = thanhtien.ToString();
-                }
+                int i = 0;
+                txtGiamgia.Text = int.TryParse(txtGiamgia.Text, out i) == false || i < 0 || i > 100 ? "" : i.ToString();
 
+                if (string.IsNullOrWhiteSpace(txtSoluong.Text) == false)
+                {
+                    if (string.IsNullOrWhiteSpace(txtGiamgia.Text) == false)
+                    {
+                        int giamgia = int.Parse(txtGiamgia.Text);
+                        int soluong = int.Parse(txtSoluong.Text);
+                        long dongia = long.Parse(txtDongia.Text);
+                        long thanhtien = dongia * soluong - (dongia * soluong) * giamgia / 100;
+                        txtThanhtien.Text = ((Decimal)thanhtien).ToString();
+                    }
+
+                }
             }
+            catch { }
+           
         }
 
         private void BtnLuu_Click(object sender, EventArgs e)
         {
-
-            if (cbbMaNCC.SelectedIndex == -1)
+            if(listCTHDBTemp.Count <= 0)
             {
-                MessageBox.Show("Chọn nhà cung cấp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cbbMaNCC.Focus();
+                MessageBox.Show("Chưa có hàng hóa nào?", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
 
-            if (cbbManv.SelectedIndex == -1)
-            {
-                MessageBox.Show("Chọn nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cbbManv.Focus();
-                return;
-            }
-
-            if (cbbMahang.SelectedIndex == -1)
-            {
-                MessageBox.Show("Chọn hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cbbMahang.Focus();
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtSoluong.Text) == true)
-            {
-                MessageBox.Show("Nhập số lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtSoluong.Focus();
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtGiamgia.Text) == true)
-            {
-                MessageBox.Show("Nhập giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtGiamgia.Focus();
-                return;
-            }
-
-            
-
-           
             Obj_HoaDonNhap obj_HoaDonNhap = new Obj_HoaDonNhap(
                 txtSohdn.Text,
                 cbbManv.SelectedValue.ToString(),
@@ -234,32 +252,30 @@ namespace QLBanHangDienTu
             BLL_HoaDonNhap.insertIntoHoadonnhap(obj_HoaDonNhap);
 
 
-            if(BLL_CTHoaDonNhap.isDuplicateMahanghoa(txtSohdn.Text, cbbMahang.SelectedValue.ToString()))
-            {
-                MessageBox.Show($"Mã hàng {cbbMahang.SelectedValue.ToString()} đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            /*     if (BLL_CTHoaDonNhap.isDuplicateMahanghoa(txtSohdn.Text, cbbMahang.SelectedValue.ToString()))
+                 {
+                     MessageBox.Show($"Mã hàng {cbbMahang.SelectedValue.ToString()} đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     return;
+                 }*/
 
-
-            Obj_CTHoaDonNhap obj_CTHoaDonNhap = new Obj_CTHoaDonNhap(
-               txtSohdn.Text,
-               cbbMahang.SelectedValue.ToString(),
-               int.Parse(txtSoluong.Text),
-               float.Parse(txtDongia.Text),
-               int.Parse(txtGiamgia.Text),
-               float.Parse(txtThanhtien.Text)
-               );
-            BLL_CTHoaDonNhap.insertIntoCTHoadonnhap(obj_CTHoaDonNhap);
+            listCTHDBTemp.ForEach(x => BLL_CTHoaDonNhap.insertIntoCTHoadonnhap(x));
 
             tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonnhap");
-            MessageBox.Show($"Thêm thành công {txtSoluong.Text} {txtTenhang.Text} Mã hóa đơn:{txtSohdn.Text}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Thêm thành công hóa đơn:{txtSohdn.Text}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            listCTHDBTemp.Clear();
+            reset();
         }
 
 
         private void BtnLammoi_Click(object sender, EventArgs e)
         {
-            txtSoluong.Enabled = false;
-            txtGiamgia.Enabled = false;
+            if (listCTHDBTemp.Count > 0)
+            {
+                DialogResult res = MessageBox.Show("Chưa lưu, có muốn tiếp tục?", "Thông báo", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                    return;
+                else { listCTHDBTemp.Clear(); tbTemp.Rows.Clear(); }
+            }
             reset();
         }
 
@@ -279,6 +295,8 @@ namespace QLBanHangDienTu
             txtTenNCC.Text = "";
             txtTongtien.Text = "0";
             btnLuu.Enabled = false;
+            txtSoluong.Enabled = false;
+            txtGiamgia.Enabled = false;
         }
 
         private void BtnDong_Click(object sender, EventArgs e)
@@ -312,6 +330,135 @@ namespace QLBanHangDienTu
         {
             tbhh = BLL_getData.getTable("pro_getAllHangHoa");
             fillComboBox(tbhh, cbbMahang, "Mahang", "Tenhang");
+        }
+
+        private bool checkInputData()
+        {
+            if (string.IsNullOrWhiteSpace(txtSohdn.Text))
+            {
+                MessageBox.Show("Chưa tạo hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (cbbMaNCC.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chọn nhà cung cấp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbbMaNCC.Focus();
+                return false;
+            }
+
+            if (cbbManv.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chọn nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbbManv.Focus();
+                return false;
+            }
+
+            if (cbbMahang.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chọn hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbbMahang.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSoluong.Text) == true)
+            {
+                MessageBox.Show("Nhập số lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSoluong.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtGiamgia.Text) == true)
+            {
+                MessageBox.Show("Nhập giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGiamgia.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private void updateTongtien()
+        {
+            float tongtien = listCTHDBTemp.Sum(x => x.ThanhTien1);
+            txtTongtien.Text = ((Decimal)tongtien).ToString();
+        }
+        private void BtnThemvaogio_Click(object sender, EventArgs e)
+        {
+
+            if (!checkInputData())
+                return;
+
+            bool alreadyExists = listCTHDBTemp.Any(x => x.MaHang1 == cbbMahang.SelectedValue.ToString());
+            if(alreadyExists)
+            {
+                MessageBox.Show($"Hàng {cbbMahang.Text} đã tồn tại!", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+
+            Obj_CTHoaDonNhap obj_CTHoaDonNhap = new Obj_CTHoaDonNhap(
+               txtSohdn.Text,
+               cbbMahang.SelectedValue.ToString(),
+               int.Parse(txtSoluong.Text),
+               float.Parse(txtDongia.Text),
+               int.Parse(txtGiamgia.Text),
+               float.Parse(txtThanhtien.Text),
+               txtTenhang.Text
+               );
+
+            listCTHDBTemp.Add(obj_CTHoaDonNhap);
+
+            tbTemp.Clear();
+            foreach(var data in listCTHDBTemp)
+            {
+                DataRow row = tbTemp.NewRow();
+                row["Mã hàng"] = data.MaHang1;
+                row["Tên hàng"] = data.TenHang1;
+                row["Số lượng"] = data.SoLuong1;
+                row["Đơn giá"] = data.DonGia1;
+                row["Giảm giá"] = data.GiamGia1;
+                row["Thành tiền"] = (Decimal)data.ThanhTien1;
+                tbTemp.Rows.Add(row);
+            }
+            tbHDN.DataSource = tbTemp;
+
+            updateTongtien();
+        }
+
+
+
+        private void BtnXoa_Click(object sender, EventArgs e)
+        {
+            if(idOfRowForDel != -1)
+            {
+                DialogResult res = MessageBox.Show($"Bạn muốn xóa hàng {tbHDN.Rows[idOfRowForDel].Cells["Mã hàng"].Value.ToString()}", "Thông báo", MessageBoxButtons.YesNo);
+                if(res == DialogResult.Yes)
+                {
+                    listCTHDBTemp.RemoveAt(idOfRowForDel);
+                    tbTemp.Rows.RemoveAt(idOfRowForDel);
+                    updateTongtien();
+                }   
+            }
+            else
+                MessageBox.Show("Dữ liệu không thể xóa!", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillCTHDN()
+        {
+
+        }
+
+        private void Sua_Click(object sender, EventArgs e)
+        {
+            if(listCTHDBTemp.Count > 0)
+            {
+
+            }
         }
 
         private void CbbMaNCC_DropDown(object sender, EventArgs e)
