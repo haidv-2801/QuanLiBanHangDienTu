@@ -48,3 +48,4 @@ D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.csproj.CoreCompileInputs.cac
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.csproj.CopyComplete
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.exe
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.pdb
+D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frNhaCungCap.resources

@@ -18,7 +18,7 @@ namespace QLBanHangDienTu
     {
         DataTable tbnv, tbhh, tbncc, tbTemp;
         List<Obj_CTHoaDonNhap> listCTHDBTemp = new List<Obj_CTHoaDonNhap>();
-
+        
         int idOfRowForDel = -1;
 
         public frHoaDonNhap()
@@ -301,6 +301,15 @@ namespace QLBanHangDienTu
 
         private void BtnDong_Click(object sender, EventArgs e)
         {
+
+            if (listCTHDBTemp.Count > 0)
+            {
+                DialogResult res = MessageBox.Show("Chưa lưu, có muốn tiếp tục?", "Thông báo", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                    return;
+                else { listCTHDBTemp.Clear(); tbTemp.Rows.Clear(); }
+            }
+
             this.Close();
         }
 
@@ -424,9 +433,6 @@ namespace QLBanHangDienTu
 
             updateTongtien();
         }
-
-
-
         private void BtnXoa_Click(object sender, EventArgs e)
         {
             if (idOfRowForDel >= 0 && idOfRowForDel < tbHDN.Rows.Count)
