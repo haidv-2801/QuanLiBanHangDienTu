@@ -80,13 +80,6 @@ namespace QLBanHangDienTu
             txtSohdn.Text = content;
         }
 
-        private void resetValue()
-        {
-            foreach (Control ctl in this.Controls)
-                if (ctl is TextBox)
-                    ctl.Text = "";
-            txtSohdn.Focus();
-        }
 
         private void FrHoaDonNhap_Load(object sender, EventArgs e)
         {
@@ -450,17 +443,6 @@ namespace QLBanHangDienTu
                 else { MessageBox.Show("Chỉ có thể xóa trong giỏ hàng!"); }
             }
         }
-
-        private void GroupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fillCTHDN()
-        {
-
-        }
-
         private void Sua_Click(object sender, EventArgs e)
         {
             if (listCTHDBTemp.Count > 0)
