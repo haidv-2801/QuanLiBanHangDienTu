@@ -54,5 +54,14 @@ namespace QLBanHangDienTu
             frNcc.Dock = DockStyle.Fill;
             frNcc.Show();
         }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frNhanVien frnv = new frNhanVien();
+            frnv.MdiParent = this;
+            frnv.Dock = DockStyle.Fill;
+            frnv.Show();
+        }
     }
 }
