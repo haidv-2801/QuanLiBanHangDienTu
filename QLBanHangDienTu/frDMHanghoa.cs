@@ -43,7 +43,7 @@ namespace QLBanHangDienTu
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            txtMahang.Text = Automatically.autoGetKey("select dbo.getKey()").Trim();
+            txtMahang.Text = Automatically.autoGetKey("select dbo.getKeyHangHoa()").Trim();
         }
 
         public void showData()

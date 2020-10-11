@@ -322,7 +322,7 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin các mặt hàng";
-            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
+         //   this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
             // btnThemvaogio
             // 

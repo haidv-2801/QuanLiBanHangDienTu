@@ -30,9 +30,9 @@
         {
             this.dgvNhaCC = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTenNCC = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtMaNCC = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTenncc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDienthoai = new System.Windows.Forms.TextBox();
@@ -41,19 +41,22 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnTaomoi = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbDiachi = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaCC)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvNhaCC
             // 
+            this.dgvNhaCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhaCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhaCC.Location = new System.Drawing.Point(28, 381);
             this.dgvNhaCC.Name = "dgvNhaCC";
+            this.dgvNhaCC.ReadOnly = true;
             this.dgvNhaCC.RowHeadersWidth = 51;
             this.dgvNhaCC.RowTemplate.Height = 24;
             this.dgvNhaCC.Size = new System.Drawing.Size(936, 264);
             this.dgvNhaCC.TabIndex = 0;
+            this.dgvNhaCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaCC_CellClick);
             // 
             // label1
             // 
@@ -64,12 +67,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã NCC";
             // 
-            // txtTenNCC
+            // txtMaNCC
             // 
-            this.txtTenNCC.Location = new System.Drawing.Point(238, 37);
-            this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(144, 22);
-            this.txtTenNCC.TabIndex = 2;
+            this.txtMaNCC.Location = new System.Drawing.Point(238, 37);
+            this.txtMaNCC.Name = "txtMaNCC";
+            this.txtMaNCC.ReadOnly = true;
+            this.txtMaNCC.Size = new System.Drawing.Size(144, 22);
+            this.txtMaNCC.TabIndex = 2;
             // 
             // label2
             // 
@@ -80,12 +84,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên NCC";
             // 
-            // txtMaNCC
+            // txtTenncc
             // 
-            this.txtMaNCC.Location = new System.Drawing.Point(238, 129);
-            this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(144, 22);
-            this.txtMaNCC.TabIndex = 2;
+            this.txtTenncc.Location = new System.Drawing.Point(238, 129);
+            this.txtTenncc.Name = "txtTenncc";
+            this.txtTenncc.Size = new System.Drawing.Size(144, 22);
+            this.txtTenncc.TabIndex = 2;
             // 
             // label3
             // 
@@ -120,6 +124,7 @@
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -129,6 +134,7 @@
             this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -138,6 +144,7 @@
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThoat
             // 
@@ -147,6 +154,7 @@
             this.btnThoat.TabIndex = 3;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnTaomoi
             // 
@@ -156,36 +164,38 @@
             this.btnTaomoi.TabIndex = 3;
             this.btnTaomoi.Text = "Tạo mới";
             this.btnTaomoi.UseVisualStyleBackColor = true;
+            this.btnTaomoi.Click += new System.EventHandler(this.btnTaomoi_Click);
             // 
-            // richTextBox1
+            // rtbDiachi
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(620, 37);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(236, 54);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
+            this.rtbDiachi.Location = new System.Drawing.Point(620, 37);
+            this.rtbDiachi.Name = "rtbDiachi";
+            this.rtbDiachi.Size = new System.Drawing.Size(236, 54);
+            this.rtbDiachi.TabIndex = 4;
+            this.rtbDiachi.Text = "";
             // 
             // frNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 679);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbDiachi);
             this.Controls.Add(this.btnTaomoi);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtDienthoai);
-            this.Controls.Add(this.txtMaNCC);
+            this.Controls.Add(this.txtTenncc);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtTenNCC);
+            this.Controls.Add(this.txtMaNCC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvNhaCC);
             this.Name = "frNhaCungCap";
             this.Text = "frNhaCungCap";
+            this.Load += new System.EventHandler(this.frNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaCC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,9 +206,9 @@
 
         private System.Windows.Forms.DataGridView dgvNhaCC;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTenNCC;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaNCC;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtTenncc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDienthoai;
@@ -207,6 +217,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnTaomoi;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbDiachi;
     }
 }
