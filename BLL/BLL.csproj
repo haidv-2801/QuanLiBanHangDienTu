@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +50,7 @@
     <Compile Include="BLL_DMHangHoa.cs" />
     <Compile Include="BLL_HangHoa.cs" />
     <Compile Include="BLL_HoaDonNhap.cs" />
+    <Compile Include="BLL_NhaCungCap.cs" />
     <Compile Include="BLL_NhanVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
