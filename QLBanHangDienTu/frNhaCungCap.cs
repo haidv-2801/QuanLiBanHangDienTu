@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -72,14 +73,20 @@ namespace QLBanHangDienTu
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            Obj_NhaCungCap obj_NhaCungCap
+                = new Obj_NhaCungCap(txtMaNCC.Text, txtTenncc.Text, rtbDiachi.Text, txtDienthoai.Text);
+            BLL_NhaCungCap.update(obj_NhaCungCap);
+            showTableNCC();
         }
 
         private void dgvNhaCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
-        /*    string id = dgvNhaCC.Rows[index].Cells[0].Value.ToString();
-            MessageBox.Show(id + id.Length);*/
+
+            txtMaNCC.Text = dgvNhaCC.Rows[index].Cells[0].Value.ToString();
+            txtTenncc.Text = dgvNhaCC.Rows[index].Cells[1].Value.ToString();
+            rtbDiachi.Text = dgvNhaCC.Rows[index].Cells[2].Value.ToString();
+            txtDienthoai.Text = dgvNhaCC.Rows[index].Cells[3].Value.ToString();
         }
     }
 }
