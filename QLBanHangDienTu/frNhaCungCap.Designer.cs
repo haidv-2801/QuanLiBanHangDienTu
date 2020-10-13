@@ -42,6 +42,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnTaomoi = new System.Windows.Forms.Button();
             this.rtbDiachi = new System.Windows.Forms.RichTextBox();
+            this.btnLammoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaCC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +119,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(307, 278);
+            this.btnThem.Location = new System.Drawing.Point(270, 278);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 30);
             this.btnThem.TabIndex = 3;
@@ -128,7 +129,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(473, 278);
+            this.btnSua.Location = new System.Drawing.Point(386, 278);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 30);
             this.btnSua.TabIndex = 3;
@@ -138,7 +139,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(620, 278);
+            this.btnXoa.Location = new System.Drawing.Point(515, 278);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 30);
             this.btnXoa.TabIndex = 3;
@@ -174,11 +175,22 @@
             this.rtbDiachi.TabIndex = 4;
             this.rtbDiachi.Text = "";
             // 
+            // btnLammoi
+            // 
+            this.btnLammoi.Location = new System.Drawing.Point(637, 278);
+            this.btnLammoi.Name = "btnLammoi";
+            this.btnLammoi.Size = new System.Drawing.Size(75, 30);
+            this.btnLammoi.TabIndex = 5;
+            this.btnLammoi.Text = "Làm mới";
+            this.btnLammoi.UseVisualStyleBackColor = true;
+            this.btnLammoi.Click += new System.EventHandler(this.btnLammoi_Click_1);
+            // 
             // frNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 679);
+            this.Controls.Add(this.btnLammoi);
             this.Controls.Add(this.rtbDiachi);
             this.Controls.Add(this.btnTaomoi);
             this.Controls.Add(this.btnThoat);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnTaomoi;
         private System.Windows.Forms.RichTextBox rtbDiachi;
+        private System.Windows.Forms.Button btnLammoi;
     }
 }

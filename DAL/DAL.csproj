@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KhachHangDAL.cs" />
     <Compile Include="getDataDAL.cs" />
     <Compile Include="HangHoaDAL.cs" />
     <Compile Include="CTHoaDonNhapDAL.cs" />

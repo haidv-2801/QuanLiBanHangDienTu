@@ -63,5 +63,14 @@ namespace QLBanHangDienTu
             frnv.Dock = DockStyle.Fill;
             frnv.Show();
         }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frKhachHang frkh = new frKhachHang();
+            frkh.MdiParent = this;
+            frkh.Dock = DockStyle.Fill;
+            frkh.Show();
+        }
     }
 }

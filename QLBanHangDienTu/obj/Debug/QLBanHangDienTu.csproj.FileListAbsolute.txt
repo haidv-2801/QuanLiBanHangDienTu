@@ -50,3 +50,4 @@ D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.exe
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.pdb
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frNhaCungCap.resources
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frNhanVien.resources
+D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frKhachHang.resources

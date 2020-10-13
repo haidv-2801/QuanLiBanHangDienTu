@@ -50,6 +50,7 @@
     <Compile Include="BLL_DMHangHoa.cs" />
     <Compile Include="BLL_HangHoa.cs" />
     <Compile Include="BLL_HoaDonNhap.cs" />
+    <Compile Include="BLL_KhachHang.cs" />
     <Compile Include="BLL_NhaCungCap.cs" />
     <Compile Include="BLL_NhanVien.cs" />
     <Compile Include="Program.cs" />

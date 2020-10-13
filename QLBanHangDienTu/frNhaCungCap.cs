@@ -88,5 +88,15 @@ namespace QLBanHangDienTu
             rtbDiachi.Text = dgvNhaCC.Rows[index].Cells[2].Value.ToString();
             txtDienthoai.Text = dgvNhaCC.Rows[index].Cells[3].Value.ToString();
         }
+
+  
+
+        private void btnLammoi_Click_1(object sender, EventArgs e)
+        {
+            txtTenncc.Text = "";
+            txtMaNCC.Text = "";
+            txtDienthoai.Text = "";
+            rtbDiachi.Text = "";
+        }
     }
 }

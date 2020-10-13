@@ -47,6 +47,7 @@
     <Compile Include="Obj_HangHoa.cs" />
     <Compile Include="Obj_HoaDonNhap.cs" />
     <Compile Include="Obj_CTHoaDonNhap.cs" />
+    <Compile Include="Obj_KhachHang.cs" />
     <Compile Include="Obj_NhaCungCap.cs" />
     <Compile Include="Obj_NhanVien.cs" />
     <Compile Include="Program.cs" />
