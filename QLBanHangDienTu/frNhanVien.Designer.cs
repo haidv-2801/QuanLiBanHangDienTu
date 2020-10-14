@@ -306,6 +306,7 @@
             this.Controls.Add(this.txtDienthoai);
             this.Controls.Add(this.txtTennv);
             this.Controls.Add(this.txtManv);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frNhanVien";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.frNhanVien_Load);

@@ -73,8 +73,6 @@
             this.tbHDN = new System.Windows.Forms.DataGridView();
             this.txtTongtien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTimkiem = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnDong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -99,10 +97,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnTimkiem);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Panel2.Controls.Add(this.txtTimkiem);
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.btnDong);
             this.splitContainer1.Size = new System.Drawing.Size(1001, 703);
             this.splitContainer1.SplitterDistance = 266;
@@ -283,15 +278,17 @@
             // 
             // btnTimkiem
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(332, 396);
+            this.btnTimkiem.Location = new System.Drawing.Point(843, 323);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(94, 25);
             this.btnTimkiem.TabIndex = 22;
             this.btnTimkiem.Text = "Tìm kiếm";
             this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnTimkiem);
             this.groupBox2.Controls.Add(this.btnThemvaogio);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.btnXoa);
@@ -322,7 +319,6 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin các mặt hàng";
-         //   this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
             // btnThemvaogio
             // 
@@ -556,22 +552,6 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Tổng tiền";
             // 
-            // txtTimkiem
-            // 
-            this.txtTimkiem.Location = new System.Drawing.Point(129, 399);
-            this.txtTimkiem.Name = "txtTimkiem";
-            this.txtTimkiem.Size = new System.Drawing.Size(160, 22);
-            this.txtTimkiem.TabIndex = 21;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 402);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Số HDN";
-            // 
             // btnDong
             // 
             this.btnDong.Location = new System.Drawing.Point(880, 392);
@@ -594,7 +574,6 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -622,8 +601,6 @@
         private System.Windows.Forms.Button btnTimkiem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView tbHDN;
-        private System.Windows.Forms.TextBox txtTimkiem;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDienthoai;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtDiachi;

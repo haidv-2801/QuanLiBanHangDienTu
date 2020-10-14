@@ -33,6 +33,7 @@ namespace QLBanHangDienTu
             if (this.MdiChildren.FirstOrDefault() != null)
                 this.MdiChildren.FirstOrDefault().Close();
         }
+
         private void HóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             closeDuplicateForm();

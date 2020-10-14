@@ -83,6 +83,18 @@
     <Compile Include="frNhaCungCap.Designer.cs">
       <DependentUpon>frNhaCungCap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frTimKiemHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frTimKiemHang.Designer.cs">
+      <DependentUpon>frTimKiemHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frTimKiemHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frTimKiemHDN.Designer.cs">
+      <DependentUpon>frTimKiemHDN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frDMHanghoa.resx">
@@ -102,6 +114,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frNhanVien.resx">
       <DependentUpon>frNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frTimKiemHang.resx">
+      <DependentUpon>frTimKiemHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frTimKiemHDN.resx">
+      <DependentUpon>frTimKiemHDN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

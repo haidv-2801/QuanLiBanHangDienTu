@@ -51,3 +51,6 @@ D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.pdb
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frNhaCungCap.resources
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frNhanVien.resources
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frKhachHang.resources
+D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.csproj.ResolveComReference.cache
+D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frTimKiemHang.resources
+D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frTimKiemHDN.resources

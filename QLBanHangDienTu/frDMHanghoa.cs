@@ -34,7 +34,15 @@ namespace QLBanHangDienTu
                 txtTenhang.Text,
                 int.Parse(txtSoluong.Text),
                 float.Parse(txtDonggianhap.Text),
-                float.Parse(txtDongiaban.Text)
+                float.Parse(txtDongiaban.Text),
+                cbbManhom.Text,
+                cbbMaloai.Text,
+                cbbMadonvi.Text,
+                cbbMachatlieu.Text,
+                cbbManuocsx.Text,
+                int.Parse(txtThoigianbaohanh.Text),
+                txtGhichu.Text,
+                null
             );
 
             BLL_DMHangHoa.insertIntoDMHangHoa(hangHoaObj);
@@ -55,7 +63,17 @@ namespace QLBanHangDienTu
             dataGridView1.Columns[2].HeaderText = "Số lượng";
             dataGridView1.Columns[3].HeaderText = "Đơn giá nhập";
             dataGridView1.Columns[4].HeaderText = "Đơn giá bán";
-           // dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[5].HeaderText = "Mã nhóm";
+            dataGridView1.Columns[6].HeaderText = "Mã loại";
+            dataGridView1.Columns[7].HeaderText = "Mã đơn vị";
+            dataGridView1.Columns[8].HeaderText = "Mã chất liệu";
+            dataGridView1.Columns[9].HeaderText = "Mã nước sản xuất";
+
+
+            dataGridView1.Columns[10].HeaderText = "Thời gian BH";
+            dataGridView1.Columns[11].HeaderText = "Ghi chú";
+            dataGridView1.Columns[12].HeaderText = "Ảnh";
+            // dataGridView1.Columns[5].Visible = false;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -120,6 +138,56 @@ namespace QLBanHangDienTu
                 txtDongiaban.Text = ((Decimal)dongiaban).ToString();
             }
            
+        }
+
+        DataTable tbnhom, tbloai;
+
+        private void fillAllCbb()
+        {
+            tbnhom = BLL_getData.getTable("pro_getAllNhom");
+            fillComboBox(tbnhom, cbbManhom, "Manhom", "Tennhom");
+            tbloai = BLL_getData.getTable("pro_getAllLoai");
+            fillComboBox(tbloai, cbbMaloai, "Maloai", "Tenloai");
+
+        }
+
+        private void AddMultipleColumn(DataTable t, string nameOfNewColumn, string column1, string column2)
+        {
+            string expression = column1 + " + '-' + " + column2;
+            t.Columns.Add(nameOfNewColumn, typeof(string), expression);
+        }
+
+        private void cbbManhom_DropDown(object sender, EventArgs e)
+        {
+            tbnhom = BLL_getData.getTable("pro_getAllNhom");
+            fillComboBox(tbnhom, cbbManhom, "Manhom", "Tennhom");
+        }
+
+        private void cbbMaloai_DropDown(object sender, EventArgs e)
+        {
+            tbloai = BLL_getData.getTable("pro_getAllLoai");
+            fillComboBox(tbloai, cbbMaloai, "Maloai", "Tenloai");
+        }
+
+        private void btnTimkiem_Click(object sender, EventArgs e)
+        {
+          /*  if (this.MdiChildren.FirstOrDefault() != null)
+                this.MdiChildren.FirstOrDefault().Close();*/
+
+            frTimKiemHang frtk = new frTimKiemHang();
+          //  frtk.MdiParent = this;
+
+            frtk.Show();
+        }
+
+        private void fillComboBox(DataTable table, ComboBox cmb, string ma, string ten)
+        {
+            string newc = "NameAndCode";
+            AddMultipleColumn(table, newc, ma, ten);
+            cmb.DataSource = table;
+            cmb.ValueMember = ma;
+            cmb.DisplayMember = newc;
+            cmb.SelectedIndex = 0;
         }
     }
 }

@@ -63,11 +63,10 @@ namespace QLBanHangDienTu
             btnLammoi.Enabled = status;
             btnLuu.Enabled = status;
             btnXoa.Enabled = status;
-            btnTimkiem.Enabled = status;
+            //btnTimkiem.Enabled = status;
             cbbMahang.Enabled = status;
             cbbMaNCC.Enabled = status;
             cbbManv.Enabled = status;
-            txtTimkiem.Enabled = status;
             txtSoluong.Enabled = status;
             txtGiamgia.Enabled = status;
         }
@@ -83,11 +82,20 @@ namespace QLBanHangDienTu
 
         private void FrHoaDonNhap_Load(object sender, EventArgs e)
         {
-            tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonnhap");
+            showHDN();
             boxControl("");
             btnControl(false);
         }
 
+        private void showHDN()
+        {
+            tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonnhap");
+            tbHDN.Columns[0].HeaderText = "Số HĐN";
+            tbHDN.Columns[1].HeaderText = "Mã nhân viên";
+            tbHDN.Columns[2].HeaderText = "Ngày nhập";
+            tbHDN.Columns[3].HeaderText = "Mã nhà cung cấp";
+            tbHDN.Columns[4].HeaderText = "Tổng tiền";
+        }
         private void fillAllCbb()
         {
             tbnv = BLL_getData.getTable("pro_getAllNhanvien");
@@ -449,6 +457,12 @@ namespace QLBanHangDienTu
             {
 
             }
+        }
+
+        private void btnTimkiem_Click(object sender, EventArgs e)
+        {
+            frTimKiemHDN frhdn = new frTimKiemHDN();
+            frhdn.Show();
         }
 
         private void CbbMaNCC_DropDown(object sender, EventArgs e)
