@@ -75,7 +75,6 @@ namespace QLBanHangDienTu
                 )
                 || r.Field<DateTime>("Ngaynhap") == dtpNgaytao.Value);
 
-
             try
             {
                 DataTable t = result.CopyToDataTable();

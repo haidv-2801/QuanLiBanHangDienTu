@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Obj_CTHoaDonBan.cs" />
     <Compile Include="Obj_HangHoa.cs" />
+    <Compile Include="Obj_HoaDonBan.cs" />
     <Compile Include="Obj_HoaDonNhap.cs" />
     <Compile Include="Obj_CTHoaDonNhap.cs" />
     <Compile Include="Obj_KhachHang.cs" />

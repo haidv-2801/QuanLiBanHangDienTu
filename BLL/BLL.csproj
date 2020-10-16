@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_CTHoaDonBan.cs" />
     <Compile Include="BLL_CTHoaDonNhap.cs" />
     <Compile Include="BLL_getData.cs" />
     <Compile Include="BLL_DMHangHoa.cs" />
     <Compile Include="BLL_HangHoa.cs" />
+    <Compile Include="BLL_HoaDonBan.cs" />
     <Compile Include="BLL_HoaDonNhap.cs" />
     <Compile Include="BLL_KhachHang.cs" />
     <Compile Include="BLL_NhaCungCap.cs" />

@@ -82,6 +82,7 @@ namespace QLBanHangDienTu
 
         private void FrHoaDonNhap_Load(object sender, EventArgs e)
         {
+          
             showHDN();
             boxControl("");
             btnControl(false);
@@ -108,6 +109,7 @@ namespace QLBanHangDienTu
             tbncc = BLL_getData.getTable("pro_getAllNhacungcap");
             fillComboBox(tbncc, cbbMaNCC, "MaNCC", "TenNCC");
         }
+
         private void AddMultipleColumn(DataTable t, string nameOfNewColumn, string column1, string column2)
         {
             string expression = column1 + " + '-' + " + column2;
@@ -165,10 +167,22 @@ namespace QLBanHangDienTu
                 }
             }
         }
+        private void fillCTHDN(int id)
+        {
+            if (listCTHDBTemp.Count <= 0)
+                return;
+            cbbMahang.Text = tbHDN.Rows[id].Cells["Mã hàng"].Value.ToString();
+            txtSoluong.Text = tbHDN.Rows[id].Cells["Số lượng"].Value.ToString();
+            txtGiamgia.Text = tbHDN.Rows[id].Cells["Giảm giá"].Value.ToString();
+            txtTenhang.Text = tbHDN.Rows[id].Cells["Tên hàng"].Value.ToString();
+            txtDongia.Text = tbHDN.Rows[id].Cells["Đơn giá"].Value.ToString();
+        }
 
         private void TbHDN_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             idOfRowForDel = e.RowIndex;
+            fillCTHDN(idOfRowForDel);
 
             if (e.RowIndex == tbHDN.Rows.Count - 1)
             {
@@ -418,6 +432,13 @@ namespace QLBanHangDienTu
 
             listCTHDBTemp.Add(obj_CTHoaDonNhap);
 
+
+            updateTableTemp();
+            updateTongtien();
+        }
+
+        private void updateTableTemp()
+        {
             tbTemp.Clear();
             foreach (var data in listCTHDBTemp)
             {
@@ -431,8 +452,6 @@ namespace QLBanHangDienTu
                 tbTemp.Rows.Add(row);
             }
             tbHDN.DataSource = tbTemp;
-
-            updateTongtien();
         }
         private void BtnXoa_Click(object sender, EventArgs e)
         {
@@ -453,10 +472,21 @@ namespace QLBanHangDienTu
         }
         private void Sua_Click(object sender, EventArgs e)
         {
-            if (listCTHDBTemp.Count > 0)
+            if(idOfRowForDel >= 0 && idOfRowForDel < tbTemp.Rows.Count)
             {
+                string mh = tbHDN.Rows[idOfRowForDel].Cells["Mã hàng"].Value.ToString();
+                var obj = listCTHDBTemp.FirstOrDefault(x => x.MaHang1 == mh);
 
+                if (listCTHDBTemp.Count > 0)
+                {
+                    obj.SoLuong1 = int.Parse(txtSoluong.Text);
+                    obj.GiamGia1 = int.Parse(txtGiamgia.Text);
+                }
+
+                updateTableTemp();
+                MessageBox.Show($"Sửa thành công mã hàng {mh}!");
             }
+
         }
 
         private void btnTimkiem_Click(object sender, EventArgs e)
