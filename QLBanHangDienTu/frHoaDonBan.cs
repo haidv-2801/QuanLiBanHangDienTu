@@ -20,6 +20,8 @@ namespace QLBanHangDienTu
 
         int idOfRowForDel = -1;
 
+        int cur_amount;
+
         List<Obj_CTHoaDonBan> listCTHDBTemp = new List<Obj_CTHoaDonBan>();
 
         public frHoaDonBan()
@@ -191,6 +193,13 @@ namespace QLBanHangDienTu
         {
             idOfRowForDel = e.RowIndex;
 
+            if (idOfRowForDel >= 0 && idOfRowForDel < listCTHDBTemp.Count)
+            {
+                DataTable temp = BLL_getData.getTableById("pro_getHanghoaById", tbHDB.Rows[idOfRowForDel].Cells["Mã hàng"].Value.ToString());
+                cur_amount = temp.Rows[0].Field<int>("Soluong");
+                //cur_amount += int.Parse(txtSoluong.Text);
+            }
+  
             if (e.RowIndex == tbHDB.Rows.Count - 1)
             {
                 if (listCTHDBTemp.Count > 0)
@@ -267,6 +276,19 @@ namespace QLBanHangDienTu
                 return;
             }
 
+
+            DataTable temp = BLL_getData.getTableById("pro_getHanghoaById", cbbMahang.SelectedValue.ToString());
+            if(temp.Rows.Count > 0) 
+                   cur_amount = temp.Rows[0].Field<int>("Soluong");
+
+            if (cur_amount - int.Parse(txtSoluong.Text) < 0)
+            {
+                MessageBox.Show($"{cbbMahang.ValueMember.ToString()} còn {cur_amount} cái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+
             Obj_CTHoaDonBan obj_CTHoaDonBan = new Obj_CTHoaDonBan(
                txtSohdb.Text,
                cbbMahang.SelectedValue.ToString(),
@@ -291,6 +313,11 @@ namespace QLBanHangDienTu
                 row["Thành tiền"] = (Decimal)data.ThanhTien1;
                 tbTemp.Rows.Add(row);
             }
+
+
+
+           
+
             tbHDB.DataSource = tbTemp;
 
             updateTongtien();
@@ -360,9 +387,47 @@ namespace QLBanHangDienTu
             }
         }
 
+
+        private void updateTableTemp()
+        {
+            tbTemp.Clear();
+            foreach (var data in listCTHDBTemp)
+            {
+                DataRow row = tbTemp.NewRow();
+                row["Mã hàng"] = data.MaHang1;
+                row["Tên hàng"] = data.TenHang1;
+                row["Số lượng"] = data.SoLuong1;
+                row["Đơn giá"] = data.DonGia1;
+                row["Giảm giá"] = data.GiamGia1;
+                row["Thành tiền"] = (Decimal)data.ThanhTien1;
+                tbTemp.Rows.Add(row);
+            }
+            tbHDB.DataSource = tbTemp;
+        }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (idOfRowForDel >= 0 && idOfRowForDel < tbTemp.Rows.Count)
+            {
+                
+                string mh = tbHDB.Rows[idOfRowForDel].Cells["Mã hàng"].Value.ToString();
 
+                
+                if (cur_amount - int.Parse(txtSoluong.Text) < 0)
+                {
+                    MessageBox.Show($"{mh} còn {cur_amount} cái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                var obj = listCTHDBTemp.FirstOrDefault(x => x.MaHang1 == mh);
+
+                obj.SoLuong1 = int.Parse(txtSoluong.Text);
+                obj.GiamGia1 = int.Parse(txtGiamgia.Text);
+
+                updateTableTemp();
+                MessageBox.Show($"Sửa thành công mã hàng {mh}!");
+            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

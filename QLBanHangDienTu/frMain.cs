@@ -82,5 +82,23 @@ namespace QLBanHangDienTu
             frhdb.Dock = DockStyle.Fill;
             frhdb.Show();
         }
+
+        private void hóaĐơnBánToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frTimKiemHDB frhdb = new frTimKiemHDB();
+            frhdb.MdiParent = this;
+            frhdb.Dock = DockStyle.Fill;
+            frhdb.Show();
+        }
+
+        private void hóaĐơnNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frTimKiemHDN frhdn = new frTimKiemHDN();
+            frhdn.MdiParent = this;
+            frhdn.Dock = DockStyle.Fill;
+            frhdn.Show();
+        }
     }
 }

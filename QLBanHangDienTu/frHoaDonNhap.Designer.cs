@@ -48,7 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnTimkiem = new System.Windows.Forms.Button();
             this.btnThemvaogio = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -278,7 +277,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnTimkiem);
             this.groupBox2.Controls.Add(this.btnThemvaogio);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.btnXoa);
@@ -309,16 +307,6 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin các mặt hàng";
-            // 
-            // btnTimkiem
-            // 
-            this.btnTimkiem.Location = new System.Drawing.Point(843, 323);
-            this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(94, 25);
-            this.btnTimkiem.TabIndex = 22;
-            this.btnTimkiem.Text = "Tìm kiếm";
-            this.btnTimkiem.UseVisualStyleBackColor = true;
-            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
             // 
             // btnThemvaogio
             // 
@@ -598,7 +586,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSohdn;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnTimkiem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView tbHDN;
         private System.Windows.Forms.TextBox txtDienthoai;

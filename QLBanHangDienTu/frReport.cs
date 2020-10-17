@@ -21,8 +21,7 @@ namespace QLBanHangDienTu
 
         private void frReport_Load(object sender, EventArgs e)
         {
-
-            this.reportViewer1.RefreshReport();
+           
         }
 
         private void btnChon_Click(object sender, EventArgs e)
@@ -33,7 +32,7 @@ namespace QLBanHangDienTu
             if (ds.Tables[0].Rows.Count > 0)
             {
                 ReportDataSource rds = new ReportDataSource();
-                rds.Name = "DataSet1";
+                rds.Name = "rds";
                 rds.Value = ds.Tables[0];
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(rds);

@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnChon = new System.Windows.Forms.Button();
+            this.QLBanHangDienTu_bantestDataSet = new QLBanHangDienTu.QLBanHangDienTu_bantestDataSet();
+            this.tbDMHanghoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbDMHanghoaTableAdapter = new QLBanHangDienTu.QLBanHangDienTu_bantestDataSetTableAdapters.tbDMHanghoaTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.QLBanHangDienTu_bantestDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDMHanghoaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -51,12 +57,26 @@
             this.btnChon.UseVisualStyleBackColor = true;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
+            // QLBanHangDienTu_bantestDataSet
+            // 
+            this.QLBanHangDienTu_bantestDataSet.DataSetName = "QLBanHangDienTu_bantestDataSet";
+            this.QLBanHangDienTu_bantestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbDMHanghoaBindingSource
+            // 
+            this.tbDMHanghoaBindingSource.DataMember = "tbDMHanghoa";
+            this.tbDMHanghoaBindingSource.DataSource = this.QLBanHangDienTu_bantestDataSet;
+            // 
+            // tbDMHanghoaTableAdapter
+            // 
+            this.tbDMHanghoaTableAdapter.ClearBeforeFill = true;
+            // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(12, 170);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 219);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(977, 497);
+            this.reportViewer1.Size = new System.Drawing.Size(977, 448);
             this.reportViewer1.TabIndex = 2;
             // 
             // frReport
@@ -70,6 +90,8 @@
             this.Name = "frReport";
             this.Text = "frReport";
             this.Load += new System.EventHandler(this.frReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.QLBanHangDienTu_bantestDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDMHanghoaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -78,6 +100,9 @@
 
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnChon;
+        private System.Windows.Forms.BindingSource tbDMHanghoaBindingSource;
+        private QLBanHangDienTu_bantestDataSet QLBanHangDienTu_bantestDataSet;
+        private QLBanHangDienTu_bantestDataSetTableAdapters.tbDMHanghoaTableAdapter tbDMHanghoaTableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

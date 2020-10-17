@@ -34,7 +34,7 @@
             this.tbHDN = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbbNhacungcap = new System.Windows.Forms.ComboBox();
+            this.cbbKhachhang = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbbMahang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbHDN)).BeginInit();
@@ -66,6 +66,7 @@
             this.btnTimkiem.TabIndex = 39;
             this.btnTimkiem.Text = "Tìm kiếm";
             this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
             // 
             // tbHDN
             // 
@@ -98,13 +99,13 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "Khách hàng";
             // 
-            // cbbNhacungcap
+            // cbbKhachhang
             // 
-            this.cbbNhacungcap.FormattingEnabled = true;
-            this.cbbNhacungcap.Location = new System.Drawing.Point(413, 93);
-            this.cbbNhacungcap.Name = "cbbNhacungcap";
-            this.cbbNhacungcap.Size = new System.Drawing.Size(187, 24);
-            this.cbbNhacungcap.TabIndex = 35;
+            this.cbbKhachhang.FormattingEnabled = true;
+            this.cbbKhachhang.Location = new System.Drawing.Point(413, 93);
+            this.cbbKhachhang.Name = "cbbKhachhang";
+            this.cbbKhachhang.Size = new System.Drawing.Size(187, 24);
+            this.cbbKhachhang.TabIndex = 35;
             // 
             // label6
             // 
@@ -134,7 +135,7 @@
             this.Controls.Add(this.tbHDN);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbbNhacungcap);
+            this.Controls.Add(this.cbbKhachhang);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbbMahang);
             this.Name = "frTimKiemHDB";
@@ -153,7 +154,7 @@
         private System.Windows.Forms.DataGridView tbHDN;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbbNhacungcap;
+        private System.Windows.Forms.ComboBox cbbKhachhang;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbbMahang;
     }

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frHoaDonBan));
             this.btnDong = new System.Windows.Forms.Button();
-            this.btnTimkiem = new System.Windows.Forms.Button();
             this.btnThemvaogio = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -93,16 +92,6 @@
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
-            // btnTimkiem
-            // 
-            this.btnTimkiem.Location = new System.Drawing.Point(843, 323);
-            this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(94, 25);
-            this.btnTimkiem.TabIndex = 22;
-            this.btnTimkiem.Text = "Tìm kiếm";
-            this.btnTimkiem.UseVisualStyleBackColor = true;
-            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
-            // 
             // btnThemvaogio
             // 
             this.btnThemvaogio.Location = new System.Drawing.Point(403, 319);
@@ -125,7 +114,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnTimkiem);
             this.groupBox2.Controls.Add(this.btnThemvaogio);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.btnXoa);
@@ -586,7 +574,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnTimkiem;
         private System.Windows.Forms.Button btnThemvaogio;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox2;

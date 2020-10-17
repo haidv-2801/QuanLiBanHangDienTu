@@ -125,3 +125,4 @@ D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frReport.resources
 D:\Csharp\QLBanHangDienTu\obj\Debug\RdlCompile.cache
 D:\Csharp\QLBanHangDienTu\obj\Debug\RdlCompile.compiled
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frTimKiemHDB.resources
+D:\Csharp\QLBanHangDienTu\bin\Debug\Report1.rdlc

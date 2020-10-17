@@ -41,6 +41,7 @@ namespace QLBanHangDienTu
 
         private void frTimKiemHDN_Load(object sender, EventArgs e)
         {
+            grTime.Visible = false;
             showHDN();
         }
         private void showHDN()
@@ -49,12 +50,13 @@ namespace QLBanHangDienTu
             tbHDN.Columns[0].HeaderText = "Số HĐN";
             tbHDN.Columns[1].HeaderText = "Mã hàng";
             tbHDN.Columns[2].HeaderText = "Mã MCC";
-            tbHDN.Columns[3].HeaderText = "Ngày nhập";
-            tbHDN.Columns[4].HeaderText = "Số lượng";
-            tbHDN.Columns[5].HeaderText = "Đơn giá";
-            tbHDN.Columns[6].HeaderText = "Giảm giá";
-            tbHDN.Columns[7].HeaderText = "Thành tiền";   
-    }
+            tbHDN.Columns[3].HeaderText = "Mã NV";
+            tbHDN.Columns[4].HeaderText = "Ngày nhập";
+            tbHDN.Columns[5].HeaderText = "Số lượng";
+            tbHDN.Columns[6].HeaderText = "Đơn giá";
+            tbHDN.Columns[7].HeaderText = "Giảm giá";
+            tbHDN.Columns[8].HeaderText = "Thành tiền";   
+        }
 
         private void btnLammoi_Click(object sender, EventArgs e)
         {
@@ -64,7 +66,7 @@ namespace QLBanHangDienTu
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             DataTable dt = BLL_getData.getTable("pro_getDataForQuestion5");
-            IEnumerable <DataRow> result = dt.AsEnumerable().Where(
+            IEnumerable<DataRow> result = dt.AsEnumerable().Where(
                 r =>
                 (
                     (cbbMahang.SelectedIndex == -1 ? true :
@@ -72,17 +74,39 @@ namespace QLBanHangDienTu
                     &&
                     (cbbNhacungcap.SelectedIndex == -1 ? true :
                     r.Field<string>("MaNCC").Contains(cbbNhacungcap.SelectedValue.ToString()))
-                )
-                || r.Field<DateTime>("Ngaynhap") == dtpNgaytao.Value);
+                 )
+             );
 
             try
             {
                 DataTable t = result.CopyToDataTable();
+
+
+
+                IEnumerable<DataRow> filterByDatetime = t.AsEnumerable().Where(
+                    r => (
+                        DateTime.Compare(r.Field<DateTime>("Ngaynhap"), Convert.ToDateTime(dtpTu.Value.ToString("MM/dd/yyyy"))) >= 0
+                          && DateTime.Compare(r.Field<DateTime>("Ngaynhap"), Convert.ToDateTime(dtpDen.Value.ToString("MM/dd/yyyy"))) <= 0
+                    )
+                );
+
+                if (checkBox1.Checked)
+                    t = filterByDatetime.CopyToDataTable();
+                
+
                 tbHDN.DataSource = t;
                 tbHDN.Refresh();
             }
             catch (Exception) { }
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+                grTime.Visible = true;
+            else
+                grTime.Visible = false;
         }
 
         private void fillComboBox(DataTable table, ComboBox cmb, string ma, string ten)

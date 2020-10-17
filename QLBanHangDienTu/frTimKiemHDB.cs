@@ -16,5 +16,10 @@ namespace QLBanHangDienTu
         {
             InitializeComponent();
         }
+
+        private void btnTimkiem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

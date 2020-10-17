@@ -14,7 +14,7 @@ namespace DAL
     public class HangHoaDAL
     {
         static SqlConnection mycon = getConnectionSql.connectToSql();
-    
+
         public static void insert(Obj_HangHoa hangHoaObj)
         {
             SqlCommand cmd = new SqlCommand("proc_insertIntoHangHoa", mycon);
@@ -45,7 +45,7 @@ namespace DAL
         }
         public static DataSet SPBanChayNhat()
         {
-            SqlCommand command = new SqlCommand("pro_getAllHangHoa");
+            SqlCommand command = new SqlCommand("pro_getAllHangHoa",mycon);
             command.CommandType = CommandType.StoredProcedure;
 
             command.Connection = mycon;

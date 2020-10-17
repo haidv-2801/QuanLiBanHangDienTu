@@ -21,5 +21,6 @@ namespace BLL
             return getDataDAL.getTableById(procName, id);
         }
 
+        
     }
 }
