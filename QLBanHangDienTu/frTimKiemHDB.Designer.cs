@@ -28,26 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpNgaytao = new System.Windows.Forms.DateTimePicker();
             this.btnLammoi = new System.Windows.Forms.Button();
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.tbHDN = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbbKhachhang = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbbMahang = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.grTime = new System.Windows.Forms.GroupBox();
+            this.dtpDen = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtpTu = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbHDN)).BeginInit();
+            this.grTime.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dtpNgaytao
-            // 
-            this.dtpNgaytao.CustomFormat = "yyyy-MM-dd";
-            this.dtpNgaytao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaytao.Location = new System.Drawing.Point(413, 156);
-            this.dtpNgaytao.Name = "dtpNgaytao";
-            this.dtpNgaytao.Size = new System.Drawing.Size(222, 22);
-            this.dtpNgaytao.TabIndex = 41;
             // 
             // btnLammoi
             // 
@@ -80,15 +76,6 @@
             this.tbHDN.RowTemplate.Height = 24;
             this.tbHDN.Size = new System.Drawing.Size(976, 310);
             this.tbHDN.TabIndex = 38;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(289, 156);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 17);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Ngày tạo";
             // 
             // label7
             // 
@@ -124,16 +111,75 @@
             this.cbbMahang.Size = new System.Drawing.Size(187, 24);
             this.cbbMahang.TabIndex = 33;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(282, 132);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(176, 21);
+            this.checkBox1.TabIndex = 42;
+            this.checkBox1.Text = "Tìm kiếm theo thời gian";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // grTime
+            // 
+            this.grTime.Controls.Add(this.dtpDen);
+            this.grTime.Controls.Add(this.label11);
+            this.grTime.Controls.Add(this.dtpTu);
+            this.grTime.Controls.Add(this.label1);
+            this.grTime.Location = new System.Drawing.Point(282, 159);
+            this.grTime.Name = "grTime";
+            this.grTime.Size = new System.Drawing.Size(486, 63);
+            this.grTime.TabIndex = 41;
+            this.grTime.TabStop = false;
+            this.grTime.Text = "Tìm kiếm theo thời gian";
+            // 
+            // dtpDen
+            // 
+            this.dtpDen.CustomFormat = "dd-MM-yyyy";
+            this.dtpDen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDen.Location = new System.Drawing.Point(320, 21);
+            this.dtpDen.Name = "dtpDen";
+            this.dtpDen.Size = new System.Drawing.Size(124, 22);
+            this.dtpDen.TabIndex = 33;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(48, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(25, 17);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Từ";
+            // 
+            // dtpTu
+            // 
+            this.dtpTu.CustomFormat = "dd-MM-yyyy";
+            this.dtpTu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTu.Location = new System.Drawing.Point(98, 21);
+            this.dtpTu.Name = "dtpTu";
+            this.dtpTu.Size = new System.Drawing.Size(117, 22);
+            this.dtpTu.TabIndex = 32;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(266, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 17);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Đến";
+            // 
             // frTimKiemHDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 679);
-            this.Controls.Add(this.dtpNgaytao);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.grTime);
             this.Controls.Add(this.btnLammoi);
             this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.tbHDN);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbbKhachhang);
             this.Controls.Add(this.label6);
@@ -141,21 +187,26 @@
             this.Name = "frTimKiemHDB";
             this.Text = "frTimKiemHDB";
             ((System.ComponentModel.ISupportInitialize)(this.tbHDN)).EndInit();
+            this.grTime.ResumeLayout(false);
+            this.grTime.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtpNgaytao;
         private System.Windows.Forms.Button btnLammoi;
         private System.Windows.Forms.Button btnTimkiem;
         private System.Windows.Forms.DataGridView tbHDN;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbbKhachhang;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbbMahang;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox grTime;
+        private System.Windows.Forms.DateTimePicker dtpDen;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtpTu;
+        private System.Windows.Forms.Label label1;
     }
 }

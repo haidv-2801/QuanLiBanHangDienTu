@@ -100,5 +100,24 @@ namespace QLBanHangDienTu
             frhdn.Dock = DockStyle.Fill;
             frhdn.Show();
         }
+
+      
+        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frReport frBCHanghoa = new frReport();
+            frBCHanghoa.MdiParent = this;
+            frBCHanghoa.Dock = DockStyle.Fill;
+            frBCHanghoa.Show();
+        }
+
+        private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frReport1 frBCHoadon = new frReport1();
+            frBCHoadon.MdiParent = this;
+            frBCHoadon.Dock = DockStyle.Fill;
+            frBCHoadon.Show();
+        }
     }
 }

@@ -21,6 +21,14 @@ namespace BLL
             return getDataDAL.getTableById(procName, id);
         }
 
-        
+        public static DataSet SPBanChayNhat(string Manhanvien)
+        {
+            return getDataDAL.SPBanChayNhat(Manhanvien);
+        }
+
+        public static DataSet HoadonVaTongtien(string MaNCC)
+        {
+            return getDataDAL.HoadonVaTongtien(MaNCC);
+        }
     }
 }

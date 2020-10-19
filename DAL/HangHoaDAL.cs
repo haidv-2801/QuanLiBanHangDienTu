@@ -43,18 +43,6 @@ namespace DAL
             cmd.ExecuteNonQuery();
             mycon.Close();
         }
-        public static DataSet SPBanChayNhat()
-        {
-            SqlCommand command = new SqlCommand("pro_getAllHangHoa",mycon);
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Connection = mycon;
-            mycon.Open();
-            DataSet ds = new DataSet();
-            SqlDataAdapter dap = new SqlDataAdapter(command);
-            dap.Fill(ds);
-            mycon.Close();
-            return ds;
-        }
+        
     }
 }

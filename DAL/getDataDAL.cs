@@ -14,6 +14,39 @@ namespace DAL
     public class getDataDAL
     {
         static SqlConnection mycon = getConnectionSql.connectToSql();
+
+        public static DataSet SPBanChayNhat(string Manhanvien)
+        {
+            SqlCommand command = new SqlCommand("pro_getDataForQuestion6", mycon);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@Manhanvien", Manhanvien);
+
+            command.Connection = mycon;
+            mycon.Open();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dap = new SqlDataAdapter(command);
+            dap.Fill(ds);
+            mycon.Close();
+            return ds;
+        }
+
+        public static DataSet HoadonVaTongtien(string MaNCC)
+        {
+            SqlCommand command = new SqlCommand("pro_getDataForQuestion7", mycon);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@MaNCC", MaNCC);
+
+            command.Connection = mycon;
+            mycon.Open();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dap = new SqlDataAdapter(command);
+            dap.Fill(ds);
+            mycon.Close();
+            return ds;
+        }
+
         public static DataTable getTable(string procName)
         {
             DataTable tb = new DataTable();
