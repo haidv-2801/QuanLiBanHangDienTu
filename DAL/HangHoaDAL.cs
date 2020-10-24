@@ -26,6 +26,17 @@ namespace DAL
             cmd.Parameters.AddWithValue("@Dongianhap", hangHoaObj.DonGiaBan1);
             cmd.Parameters.AddWithValue("@Dongiaban", hangHoaObj.DonGiaBan1);
 
+
+            cmd.Parameters.AddWithValue("@Manhom", hangHoaObj.MaNhom1);
+            cmd.Parameters.AddWithValue("@Maloai", hangHoaObj.MaLoai1);
+            cmd.Parameters.AddWithValue("@Madonvi", hangHoaObj.MaDonVi1);
+            cmd.Parameters.AddWithValue("@Machatlieu", hangHoaObj.MaChatLieu1);
+            cmd.Parameters.AddWithValue("@ManuocSx", hangHoaObj.MaNuocSX1);
+
+            cmd.Parameters.AddWithValue("@Thoigianbaohanh", hangHoaObj.ThoiGianBH1);
+            cmd.Parameters.AddWithValue("@Ghichu", hangHoaObj.GhiChu1);
+            cmd.Parameters.AddWithValue("@Anh", hangHoaObj.Anh1);
+
             mycon.Open();
             cmd.ExecuteNonQuery();
             mycon.Close();

@@ -44,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Obj_LoaiHang.cs" />
+    <Compile Include="Obj_DonViTinh.cs" />
+    <Compile Include="Obj_NhomHang.cs" />
+    <Compile Include="Obj_NuocSanXuat.cs" />
+    <Compile Include="Obj_ChatLieu.cs" />
+    <Compile Include="Obj_CaLam.cs" />
+    <Compile Include="Obj_CongViec.cs" />
     <Compile Include="Obj_CTHoaDonBan.cs" />
     <Compile Include="Obj_HangHoa.cs" />
     <Compile Include="Obj_HoaDonBan.cs" />

@@ -30,13 +30,47 @@ namespace DAL
             mycon.Close();
             return ds;
         }
-
+        
         public static DataSet HoadonVaTongtien(string MaNCC)
         {
             SqlCommand command = new SqlCommand("pro_getDataForQuestion7", mycon);
             command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.AddWithValue("@MaNCC", MaNCC);
+
+            command.Connection = mycon;
+            mycon.Open();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dap = new SqlDataAdapter(command);
+            dap.Fill(ds);
+            mycon.Close();
+            return ds;
+        }
+
+        public static DataSet Doanhthu(string quy, string nam)
+        {
+            SqlCommand command = new SqlCommand("pro_getDataForQuestion8_1", mycon);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@quy", quy);
+            command.Parameters.AddWithValue("@nam", nam);
+
+            command.Connection = mycon;
+            mycon.Open();
+            DataSet ds = new DataSet();
+            SqlDataAdapter dap = new SqlDataAdapter(command);
+            dap.Fill(ds);
+            mycon.Close();
+            return ds;
+        }
+
+        public static DataSet NCCKhonggiaohang(string thang, string nam)
+        {
+            SqlCommand command = new SqlCommand("pro_getDataForQuestion9", mycon);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@thang", thang);
+            command.Parameters.AddWithValue("@nam", nam);
 
             command.Connection = mycon;
             mycon.Open();

@@ -105,7 +105,7 @@ namespace QLBanHangDienTu
         private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             closeDuplicateForm();
-            frReport frBCHanghoa = new frReport();
+            frReport1 frBCHanghoa = new frReport1();
             frBCHanghoa.MdiParent = this;
             frBCHanghoa.Dock = DockStyle.Fill;
             frBCHanghoa.Show();
@@ -114,10 +114,28 @@ namespace QLBanHangDienTu
         private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             closeDuplicateForm();
-            frReport1 frBCHoadon = new frReport1();
+            frReport2 frBCHoadon = new frReport2();
             frBCHoadon.MdiParent = this;
             frBCHoadon.Dock = DockStyle.Fill;
             frBCHoadon.Show();
+        }
+
+        private void báoCáoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frReport3 frBCDoanhthu = new frReport3();
+            frBCDoanhthu.MdiParent = this;
+            frBCDoanhthu.Dock = DockStyle.Fill;
+            frBCDoanhthu.Show();
+        }
+
+        private void báoCáoNCCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frReport4 frBCNCC = new frReport4();
+            frBCNCC.MdiParent = this;
+            frBCNCC.Dock = DockStyle.Fill;
+            frBCNCC.Show();
         }
     }
 }

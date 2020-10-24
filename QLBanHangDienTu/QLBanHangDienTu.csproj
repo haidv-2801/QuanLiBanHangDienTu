@@ -53,6 +53,7 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
@@ -108,17 +109,29 @@
     <Compile Include="frNhaCungCap.Designer.cs">
       <DependentUpon>frNhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frReport.Designer.cs">
-      <DependentUpon>frReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="frReport1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frReport1.Designer.cs">
       <DependentUpon>frReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frReport2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frReport2.Designer.cs">
+      <DependentUpon>frReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frReport3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frReport3.Designer.cs">
+      <DependentUpon>frReport3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frReport4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frReport4.Designer.cs">
+      <DependentUpon>frReport4.cs</DependentUpon>
     </Compile>
     <Compile Include="frTimKiemHang.cs">
       <SubType>Form</SubType>
@@ -140,6 +153,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLBanHangDienTu_bantestDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanHangDienTu_bantestDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLBanHangDienTu_bantestDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -167,11 +185,17 @@
     <EmbeddedResource Include="frNhanVien.resx">
       <DependentUpon>frNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frReport.resx">
-      <DependentUpon>frReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frReport1.resx">
       <DependentUpon>frReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frReport2.resx">
+      <DependentUpon>frReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frReport3.resx">
+      <DependentUpon>frReport3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frReport4.resx">
+      <DependentUpon>frReport4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frTimKiemHang.resx">
       <DependentUpon>frTimKiemHang.cs</DependentUpon>
@@ -191,10 +215,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc">
+    <Content Include="Report1.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report2.rdlc" />
+    </Content>
+    <Content Include="Report2.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report3.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report4.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -205,6 +237,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLBanHangDienTu_bantestDataSet.xsc">
+      <DependentUpon>QLBanHangDienTu_bantestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBanHangDienTu_bantestDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet.xss">
+      <DependentUpon>QLBanHangDienTu_bantestDataSet.xsd</DependentUpon>
+    </None>
     <None Include="QLBanHangDienTu_bantestDataSet1.xsc">
       <DependentUpon>QLBanHangDienTu_bantestDataSet1.xsd</DependentUpon>
     </None>

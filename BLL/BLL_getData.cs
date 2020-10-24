@@ -30,5 +30,16 @@ namespace BLL
         {
             return getDataDAL.HoadonVaTongtien(MaNCC);
         }
+
+        public static DataSet Doanhthu(string quy, string nam)
+        {
+            return getDataDAL.Doanhthu(quy, nam);
+        }
+
+        public static DataSet NCCKhonggiaohang(string thang, string nam)
+        {
+            return getDataDAL.NCCKhonggiaohang(thang, nam);
+        }
+
     }
 }

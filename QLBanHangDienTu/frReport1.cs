@@ -19,36 +19,18 @@ namespace QLBanHangDienTu
             InitializeComponent();
         }
 
-        DataTable tbncc;
-        private void comboBox1_DropDown(object sender, EventArgs e)
+        private void frReport1_Load(object sender, EventArgs e)
         {
-            tbncc = BLL_getData.getTable("pro_getAllNhacungcap");
-            fillComboBox(tbncc, cbbNCC, "MaNCC", "TenNCC");
-        }
-
-        private void AddMultipleColumn(DataTable t, string nameOfNewColumn, string column1, string column2)
-        {
-            string expression = column1 + " + '-' + " + column2;
-            t.Columns.Add(nameOfNewColumn, typeof(string), expression);
-        }
-
-        private void fillComboBox(DataTable table, ComboBox cmb, string ma, string ten)
-        {
-            string newc = "NameAndCode";
-            AddMultipleColumn(table, newc, ma, ten);
-            cmb.DataSource = table;
-            cmb.ValueMember = ma;
-            cmb.DisplayMember = newc;
-            cmb.SelectedIndex = 0;
+            this.reportViewer1.RefreshReport();
         }
 
         private void btnChon_Click(object sender, EventArgs e)
         {
-            if (cbbNCC.SelectedIndex == -1)
+            if (cbbManv.SelectedIndex == -1)
                 return;
-            DataSet ds = BLL_getData.HoadonVaTongtien(cbbNCC.SelectedValue.ToString());
+            DataSet ds = BLL_getData.SPBanChayNhat(cbbManv.SelectedValue.ToString());
             reportViewer1.ProcessingMode = ProcessingMode.Local;
-            reportViewer1.LocalReport.ReportPath = "Report2.rdlc";
+            reportViewer1.LocalReport.ReportPath = "Report1.rdlc";
             if (ds.Tables[0].Rows.Count > 0)
             {
                 lblempty.Visible = false;
@@ -66,9 +48,27 @@ namespace QLBanHangDienTu
             }
         }
 
-        private void frReport1_Load(object sender, EventArgs e)
+        DataTable tbnv;
+        private void comboBox1_DropDown(object sender, EventArgs e)
         {
-            
+            tbnv = BLL_getData.getTable("pro_getAllNhanvien");
+            fillComboBox(tbnv, cbbManv, "MaNV", "Tennhanvien");
+        }
+
+        private void AddMultipleColumn(DataTable t, string nameOfNewColumn, string column1, string column2)
+        {
+            string expression = column1 + " + '-' + " + column2;
+            t.Columns.Add(nameOfNewColumn, typeof(string), expression);
+        }
+
+        private void fillComboBox(DataTable table, ComboBox cmb, string ma, string ten)
+        {
+            string newc = "NameAndCode";
+            AddMultipleColumn(table, newc, ma, ten);
+            cmb.DataSource = table;
+            cmb.ValueMember = ma;
+            cmb.DisplayMember = newc;
+            cmb.SelectedIndex = 0;
         }
     }
 }

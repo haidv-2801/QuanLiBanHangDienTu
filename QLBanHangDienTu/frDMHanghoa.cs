@@ -42,7 +42,7 @@ namespace QLBanHangDienTu
                 cbbManuocsx.Text,
                 int.Parse(txtThoigianbaohanh.Text),
                 txtGhichu.Text,
-                null
+                toByte(ptbAnh.Image)
             );
 
             BLL_DMHangHoa.insertIntoDMHangHoa(hangHoaObj);
@@ -73,7 +73,6 @@ namespace QLBanHangDienTu
             dataGridView1.Columns[10].HeaderText = "Thời gian BH";
             dataGridView1.Columns[11].HeaderText = "Ghi chú";
             dataGridView1.Columns[12].HeaderText = "Ảnh";
-            // dataGridView1.Columns[5].Visible = false;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -107,12 +106,21 @@ namespace QLBanHangDienTu
                 txtDonggianhap.Text = dataGridView1.Rows[index].Cells["Dongianhap"].Value.ToString();
                 txtDongiaban.Text = dataGridView1.Rows[index].Cells["Dongiaban"].Value.ToString();
 
-                try
-                {
-                    byte[] img = (byte[])dataGridView1.Rows[index].Cells["Anh"].Value;
-                    ptbAnh.Image = Image.FromStream(new MemoryStream(img));
+
+               /* try
+                {*/
+                    var fetchByte = dataGridView1.Rows[index].Cells["Anh"].Value;
+                    if (fetchByte == DBNull.Value)
+                        ptbAnh.Image = null;
+                    else
+                    {
+                        byte[] img = (byte[])dataGridView1.Rows[index].Cells["Anh"].Value;
+                        ptbAnh.Image = Image.FromStream(new MemoryStream(img));  
+                    }
+                    
+               /*     
                 }
-                catch (Exception) { }
+                catch (Exception) { }*/
             }
         }
 
@@ -120,13 +128,28 @@ namespace QLBanHangDienTu
         {
             OpenFileDialog OD = new OpenFileDialog();
             OD.FileName = "";
-            OD.Filter = "Supported image|*jpg;*jpeg;*.png";
+            OD.Filter = "JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|All File (*.*)|*.*";
+            OD.FilterIndex = 3;
+            OD.RestoreDirectory = true;
             if (OD.ShowDialog() == DialogResult.OK)
             {
                 ptbAnh.SizeMode = PictureBoxSizeMode.StretchImage;
                 ptbAnh.Load(OD.FileName);
             }
+        }
 
+        private Image toImage(byte[] b)
+        {
+            using (var ms = new MemoryStream(b))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+        private byte[] toByte(Image img)
+        {
+            ImageConverter imageConverter = new ImageConverter();
+            byte[] arrByte = (byte[])imageConverter.ConvertTo(img, typeof(byte[]));
+            return arrByte;
         }
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
