@@ -83,14 +83,6 @@ namespace QLBanHangDienTu
             frhdb.Show();
         }
 
-        private void hóaĐơnBánToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            closeDuplicateForm();
-            frTimKiemHDB frhdb = new frTimKiemHDB();
-            frhdb.MdiParent = this;
-            frhdb.Dock = DockStyle.Fill;
-            frhdb.Show();
-        }
 
         private void hóaĐơnNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -136,6 +128,25 @@ namespace QLBanHangDienTu
             frBCNCC.MdiParent = this;
             frBCNCC.Dock = DockStyle.Fill;
             frBCNCC.Show();
+        }
+
+        private void hàngHóaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.FirstOrDefault() != null)
+                this.MdiChildren.FirstOrDefault().Close();
+            frTimKiemHang frtk = new frTimKiemHang();
+            frtk.MdiParent = this;
+            frtk.Dock = DockStyle.Fill;
+            frtk.Show();
+        }
+
+        private void chấtLiệuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frChatLieu frcl = new frChatLieu();
+            frcl.MdiParent = this;
+            frcl.Dock = DockStyle.Fill;
+            frcl.Show();
         }
     }
 }

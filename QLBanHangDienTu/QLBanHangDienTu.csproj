@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frChatLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frChatLieu.Designer.cs">
+      <DependentUpon>frChatLieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,12 +145,6 @@
     <Compile Include="frTimKiemHang.Designer.cs">
       <DependentUpon>frTimKiemHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frTimKiemHDB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frTimKiemHDB.Designer.cs">
-      <DependentUpon>frTimKiemHDB.cs</DependentUpon>
-    </Compile>
     <Compile Include="frTimKiemHDN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,7 +163,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBanHangDienTu_bantestDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLBanHangDienTu_bantestDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanHangDienTu_bantestDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLBanHangDienTu_bantestDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanHangDienTu_bantestDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="frChatLieu.resx">
+      <DependentUpon>frChatLieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frDMHanghoa.resx">
       <DependentUpon>frDMHanghoa.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,9 +212,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frTimKiemHang.resx">
       <DependentUpon>frTimKiemHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frTimKiemHDB.resx">
-      <DependentUpon>frTimKiemHDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frTimKiemHDN.resx">
       <DependentUpon>frTimKiemHDN.cs</DependentUpon>
@@ -258,6 +268,28 @@
     </None>
     <None Include="QLBanHangDienTu_bantestDataSet1.xss">
       <DependentUpon>QLBanHangDienTu_bantestDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet2.xsc">
+      <DependentUpon>QLBanHangDienTu_bantestDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBanHangDienTu_bantestDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet2.xss">
+      <DependentUpon>QLBanHangDienTu_bantestDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet3.xsc">
+      <DependentUpon>QLBanHangDienTu_bantestDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBanHangDienTu_bantestDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet3.xss">
+      <DependentUpon>QLBanHangDienTu_bantestDataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

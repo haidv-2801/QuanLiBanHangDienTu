@@ -121,7 +121,6 @@ D:\Csharp\QLBanHangDienTu\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resou
 D:\Csharp\QLBanHangDienTu\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Csharp\QLBanHangDienTu\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frHoaDonBan.resources
-D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frTimKiemHDB.resources
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frReport1.resources
 D:\Csharp\QLBanHangDienTu\obj\Debug\RdlCompile.cache
 D:\Csharp\QLBanHangDienTu\obj\Debug\RdlCompile.compiled
@@ -132,3 +131,4 @@ D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frReport3.resources
 D:\Csharp\QLBanHangDienTu\bin\Debug\Report3.rdlc
 D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frReport4.resources
 D:\Csharp\QLBanHangDienTu\bin\Debug\Report4.rdlc
+D:\Csharp\QLBanHangDienTu\obj\Debug\QLBanHangDienTu.frChatLieu.resources

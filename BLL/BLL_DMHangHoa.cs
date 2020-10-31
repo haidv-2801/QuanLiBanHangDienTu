@@ -20,5 +20,10 @@ namespace BLL
         {
             HangHoaDAL.delete(id);
         }
+
+        public static void update(Obj_HangHoa hangHoaObj)
+        {
+            HangHoaDAL.update(hangHoaObj);
+        }
     }
 }

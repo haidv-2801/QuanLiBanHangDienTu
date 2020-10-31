@@ -53,6 +53,7 @@
     <Compile Include="BLL_HoaDonBan.cs" />
     <Compile Include="BLL_HoaDonNhap.cs" />
     <Compile Include="BLL_KhachHang.cs" />
+    <Compile Include="BLL_Chatlieu.cs" />
     <Compile Include="BLL_NhaCungCap.cs" />
     <Compile Include="BLL_NhanVien.cs" />
     <Compile Include="Program.cs" />

@@ -52,6 +52,7 @@
     <Compile Include="CTHoaDonNhapDAL.cs" />
     <Compile Include="HoaDonNhapDAL.cs" />
     <Compile Include="NhaCungCapDAL.cs" />
+    <Compile Include="ChatLieuDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

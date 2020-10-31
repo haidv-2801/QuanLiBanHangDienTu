@@ -23,6 +23,25 @@ namespace Handling
             return res.ToString();
         }
 
+        public static string createKey(string str)
+        {
+            int len = str.Length;
+            int id = str.IndexOf(str.FirstOrDefault(x => char.IsNumber(x)));
+
+            string preFix = str.Substring(0, id);
+            string postFix = str.Substring(id);
+
+            int numPost = int.Parse(postFix) + 1;
+            postFix = "0000000" + numPost.ToString();
+            postFix = postFix.Substring(postFix.Length - len + preFix.Length);
+
+            string resuslt = preFix + postFix;
+
+            return resuslt;
+        }
+
+      
+
        
 
         public static string ConvertTimeTo24(string hour)

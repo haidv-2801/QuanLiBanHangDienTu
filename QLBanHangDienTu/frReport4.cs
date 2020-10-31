@@ -57,6 +57,12 @@ namespace QLBanHangDienTu
                 ReportDataSource rds = new ReportDataSource();
                 rds.Name = "DataSet1";
                 rds.Value = ds.Tables[0];
+
+                /*parameter*/
+                List<ReportParameter> parameters = new List<ReportParameter>();
+                parameters.Add(new ReportParameter("Thoigian", cbbThang.Text + " / " + cbbNam.Text));
+                reportViewer1.LocalReport.SetParameters(parameters);
+
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(rds);
                 reportViewer1.RefreshReport();

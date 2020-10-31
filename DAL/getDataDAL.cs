@@ -49,7 +49,7 @@ namespace DAL
 
         public static DataSet Doanhthu(string quy, string nam)
         {
-            SqlCommand command = new SqlCommand("pro_getDataForQuestion8_1", mycon);
+            SqlCommand command = new SqlCommand("pro_getDataForQuestion8_2", mycon);
             command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.AddWithValue("@quy", quy);
@@ -116,6 +116,5 @@ namespace DAL
             return tb;
         }
 
-      
     }
 }

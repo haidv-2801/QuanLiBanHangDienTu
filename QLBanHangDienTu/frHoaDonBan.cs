@@ -480,11 +480,7 @@ namespace QLBanHangDienTu
             }
         }
 
-        private void btnTimkiem_Click(object sender, EventArgs e)
-        {
-            frTimKiemHDB frhdb = new frTimKiemHDB();
-            frhdb.Show();
-        }
+  
 
         private void lblQuaylai_Click(object sender, EventArgs e)
         {

@@ -87,14 +87,13 @@
             this.cbbQuy.Name = "cbbQuy";
             this.cbbQuy.Size = new System.Drawing.Size(136, 30);
             this.cbbQuy.TabIndex = 12;
-            this.cbbQuy.DropDown += new System.EventHandler(this.cbbNCC_DropDown);
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(12, 241);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 207);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(977, 446);
+            this.reportViewer1.Size = new System.Drawing.Size(977, 480);
             this.reportViewer1.TabIndex = 11;
             // 
             // label3
@@ -115,7 +114,6 @@
             this.cbbNam.Name = "cbbNam";
             this.cbbNam.Size = new System.Drawing.Size(136, 30);
             this.cbbNam.TabIndex = 17;
-            this.cbbNam.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             // 
             // frReport3
             // 
