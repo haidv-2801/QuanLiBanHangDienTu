@@ -9,16 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Handling;
-
+using Object;
 
 namespace QLBanHangDienTu
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(TaiKhoan tk)
         {
             InitializeComponent();
+            myAccount = tk;
+            if(myAccount.PhanQuyen != 1)
+            {
+                báoCaoToolStripMenuItem.Visible = false;
+                nhânViênToolStripMenuItem.Visible = false;
+            }
         }
+
+        private TaiKhoan myAccount;
+
+        public TaiKhoan MyAccount { get => myAccount; set => myAccount = value; }
+
         private void HàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             closeDuplicateForm();
@@ -42,8 +53,11 @@ namespace QLBanHangDienTu
             frhdn.Dock = DockStyle.Fill;
             frhdn.Show();
         }
-        private void ThoátToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ĐăngXuatToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form2 f2 = new Form2();
+            this.Hide();
+            f2.ShowDialog();
             this.Close();
         }
 
@@ -147,6 +161,23 @@ namespace QLBanHangDienTu
             frcl.MdiParent = this;
             frcl.Dock = DockStyle.Fill;
             frcl.Show();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void thoátToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau doiMatKhau = new DoiMatKhau(MyAccount);
+            doiMatKhau.Show();
+            myAccount = doiMatKhau.TaiKhoan;
         }
     }
 }
