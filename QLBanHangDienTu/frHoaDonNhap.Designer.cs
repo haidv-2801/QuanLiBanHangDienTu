@@ -93,6 +93,7 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
@@ -401,7 +402,7 @@
             this.btnSua.TabIndex = 38;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.Sua_Click);
+            this.btnSua.Click += new System.EventHandler(this.CbbMahang_DropDown);
             // 
             // btnLuu
             // 
@@ -520,6 +521,7 @@
             this.tbHDN.Size = new System.Drawing.Size(918, 158);
             this.tbHDN.TabIndex = 0;
             this.tbHDN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TbHDN_CellClick);
+            this.tbHDN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbHDN_CellContentClick);
             this.tbHDN.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TbHDN_CellContentDoubleClick);
             this.tbHDN.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TbHDN_CellDoubleClick);
             // 

@@ -13,6 +13,13 @@ namespace Object
         private String maNV;
         private int phanQuyen;
 
+        public TaiKhoan()
+        {
+            this.tenTaiKhoan = "";
+            this.matKhau = "";
+            this.maNV = "";
+            this.phanQuyen = -1;
+        }
         public TaiKhoan(string tenTaiKhoan, string matKhau, int phanQuyen, string maNV)
         {
             this.tenTaiKhoan = tenTaiKhoan;

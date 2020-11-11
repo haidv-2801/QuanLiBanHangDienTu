@@ -110,6 +110,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "frReport2";
             this.Text = "Báo cáo";
+            this.Load += new System.EventHandler(this.frReport2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

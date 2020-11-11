@@ -97,5 +97,10 @@ namespace QLBanHangDienTu
         {
 
         }
+
+        private void frReport2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -77,6 +77,7 @@
             this.tbHDN.RowTemplate.Height = 24;
             this.tbHDN.Size = new System.Drawing.Size(976, 310);
             this.tbHDN.TabIndex = 29;
+            this.tbHDN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbHDN_CellContentClick);
             // 
             // label11
             // 

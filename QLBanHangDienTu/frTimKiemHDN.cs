@@ -109,6 +109,11 @@ namespace QLBanHangDienTu
                 grTime.Visible = false;
         }
 
+        private void tbHDN_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void fillComboBox(DataTable table, ComboBox cmb, string ma, string ten)
         {
             string newc = "NameAndCode";

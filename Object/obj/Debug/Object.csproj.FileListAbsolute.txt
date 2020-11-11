@@ -12,3 +12,10 @@ D:\Csharp\Object\obj\Debug\Object.csprojAssemblyReference.cache
 D:\Csharp\Object\obj\Debug\Object.csproj.CoreCompileInputs.cache
 D:\Csharp\Object\obj\Debug\Object.exe
 D:\Csharp\Object\obj\Debug\Object.pdb
+D:\QuanLiBanHangDienTu\Object\bin\Debug\Object.exe.config
+D:\QuanLiBanHangDienTu\Object\bin\Debug\Object.exe
+D:\QuanLiBanHangDienTu\Object\bin\Debug\Object.pdb
+D:\QuanLiBanHangDienTu\Object\obj\Debug\Object.csprojAssemblyReference.cache
+D:\QuanLiBanHangDienTu\Object\obj\Debug\Object.csproj.CoreCompileInputs.cache
+D:\QuanLiBanHangDienTu\Object\obj\Debug\Object.exe
+D:\QuanLiBanHangDienTu\Object\obj\Debug\Object.pdb

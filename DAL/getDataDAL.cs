@@ -17,10 +17,10 @@ namespace DAL
 
         public static DataSet SPBanChayNhat(string Manhanvien)
         {
-            SqlCommand command = new SqlCommand("pro_getDataForQuestion6", mycon);
-            command.CommandType = CommandType.StoredProcedure;
+            SqlCommand command = new SqlCommand("SELECT * FROM Top3ProductBestSale('" + Manhanvien + "')", mycon);
+            command.CommandType = CommandType.Text;
 
-            command.Parameters.AddWithValue("@Manhanvien", Manhanvien);
+            //command.Parameters.AddWithValue("@Manhanvien", Manhanvien);
 
             command.Connection = mycon;
             mycon.Open();
@@ -30,7 +30,7 @@ namespace DAL
             mycon.Close();
             return ds;
         }
-        
+
         public static DataSet HoadonVaTongtien(string MaNCC)
         {
             SqlCommand command = new SqlCommand("pro_getDataForQuestion7", mycon);
@@ -49,7 +49,7 @@ namespace DAL
 
         public static DataSet Doanhthu(string quy, string nam)
         {
-            SqlCommand command = new SqlCommand("pro_getDataForQuestion8_2", mycon);
+            SqlCommand command = new SqlCommand("pro_getDataForQuestion8", mycon);
             command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.AddWithValue("@quy", quy);

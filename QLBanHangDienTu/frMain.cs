@@ -15,20 +15,18 @@ namespace QLBanHangDienTu
 {
     public partial class Form1 : Form
     {
-        public Form1(TaiKhoan tk)
+        public Form1()
         {
+            //TaiKhoan tk
             InitializeComponent();
-            myAccount = tk;
+            /*myAccount = tk;
             if(myAccount.PhanQuyen != 1)
             {
                 báoCaoToolStripMenuItem.Visible = false;
                 nhânViênToolStripMenuItem.Visible = false;
-            }
+            }*/
         }
 
-        private TaiKhoan myAccount;
-
-        public TaiKhoan MyAccount { get => myAccount; set => myAccount = value; }
 
         private void HàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -53,13 +51,13 @@ namespace QLBanHangDienTu
             frhdn.Dock = DockStyle.Fill;
             frhdn.Show();
         }
-        private void ĐăngXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        /*private void ĐăngXuatToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             this.Hide();
             f2.ShowDialog();
             this.Close();
-        }
+        }*/
 
         private void NhàcungCấpToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -163,21 +161,65 @@ namespace QLBanHangDienTu
             frcl.Show();
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void thoátToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            formCotrol();
+            /*lbtk.Text = frDangNhap.taiKhoan.TenTaiKhoan;
+            lbmk.Text = frDangNhap.taiKhoan.MatKhau;*/
+        }
+
+        private void formCotrol()
+        {
+            int per = frDangNhap.taiKhoan.PhanQuyen;
+            if(per == 0)
+            {
+                status(true);
+            }
+            else if(per == 1)
+            {
+                status(false);
+            }
+        }
+
+        private void status(bool st)
+        {
+            báoCaoToolStripMenuItem.Visible = st;
+        }
+
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DoiMatKhau doiMatKhau = new DoiMatKhau(MyAccount);
-            doiMatKhau.Show();
-            myAccount = doiMatKhau.TaiKhoan;
+            closeDuplicateForm();
+            //this.Hide();
+            frDoiMatKhau drdmk = new frDoiMatKhau();
+            drdmk.Show();
         }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frDangNhap frdn = new frDangNhap();
+            frdn.Show();
+        }
+
+        private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeDuplicateForm();
+            frTaiKhoan frTaiKhoan = new frTaiKhoan();
+            frTaiKhoan.MdiParent = this;
+            frTaiKhoan.Dock = DockStyle.Fill;
+            frTaiKhoan.Show();
+        }
+
+        /* private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+         {
+             DoiMatKhau doiMatKhau = new DoiMatKhau(MyAccount);
+             doiMatKhau.Show();
+             myAccount = doiMatKhau.TaiKhoan;
+         }*/
     }
 }

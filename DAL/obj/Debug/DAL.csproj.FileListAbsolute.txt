@@ -26,3 +26,17 @@ D:\Csharp\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\Csharp\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Csharp\DAL\obj\Debug\DAL.exe
 D:\Csharp\DAL\obj\Debug\DAL.pdb
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\DAL.exe.config
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\DAL.exe
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\DAL.pdb
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\Handling.exe
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\Object.exe
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\Handling.pdb
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\Handling.exe.config
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\Object.pdb
+D:\QuanLiBanHangDienTu\DAL\bin\Debug\Object.exe.config
+D:\QuanLiBanHangDienTu\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\QuanLiBanHangDienTu\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\QuanLiBanHangDienTu\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\QuanLiBanHangDienTu\DAL\obj\Debug\DAL.exe
+D:\QuanLiBanHangDienTu\DAL\obj\Debug\DAL.pdb

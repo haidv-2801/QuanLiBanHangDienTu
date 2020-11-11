@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>F:\UngDung\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -56,6 +59,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,23 +71,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoiMatKhau.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DoiMatKhau.Designer.cs">
-      <DependentUpon>DoiMatKhau.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="frChatLieu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frChatLieu.Designer.cs">
       <DependentUpon>frChatLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frDangNhap.Designer.cs">
+      <DependentUpon>frDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frDashBoard.Designer.cs">
+      <DependentUpon>frDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frDoiMatKhau.Designer.cs">
+      <DependentUpon>frDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="frHoaDonBan.cs">
       <SubType>Form</SubType>
@@ -151,6 +161,12 @@
     <Compile Include="frReport4.Designer.cs">
       <DependentUpon>frReport4.cs</DependentUpon>
     </Compile>
+    <Compile Include="frTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frTaiKhoan.Designer.cs">
+      <DependentUpon>frTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frTimKiemHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,28 +191,116 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBanHangDienTu_bantestDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLBanHangDienTu_bantestDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBanHangDienTu_bantestDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLBanHangDienTu_bantestDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBanHangDienTu_bantestDataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="DoiMatKhau.resx">
-      <DependentUpon>DoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="TOP3PRODUCTBESTSALE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TOP3PRODUCTBESTSALE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Baocao_Doanhthu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Baocao_Doanhthu.Designer.cs">
+      <DependentUpon>UC_Baocao_Doanhthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Baocao_Hoadonnhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Baocao_Hoadonnhap.Designer.cs">
+      <DependentUpon>UC_Baocao_Hoadonnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Baocao_NCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Baocao_NCC.Designer.cs">
+      <DependentUpon>UC_Baocao_NCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Baocao_Sanpham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Baocao_Sanpham.Designer.cs">
+      <DependentUpon>UC_Baocao_Sanpham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Baocao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Baocao.Designer.cs">
+      <DependentUpon>UC_Baocao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Hanghoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Hanghoa.Designer.cs">
+      <DependentUpon>UC_Hanghoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Hoadonban.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Hoadonban.Designer.cs">
+      <DependentUpon>UC_Hoadonban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Hoadonnhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Hoadonnhap.Designer.cs">
+      <DependentUpon>UC_Hoadonnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Khachhang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Khachhang.Designer.cs">
+      <DependentUpon>UC_Khachhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Nhanvien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Nhanvien.Designer.cs">
+      <DependentUpon>UC_Nhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Search_Hoadonnhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Search_Hoadonnhap.Designer.cs">
+      <DependentUpon>UC_Search_Hoadonnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Search_Hanghoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Search_Hanghoa.Designer.cs">
+      <DependentUpon>UC_Search_Hanghoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Timkiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Timkiem.Designer.cs">
+      <DependentUpon>UC_Timkiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Timkiem1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Timkiem1.Designer.cs">
+      <DependentUpon>UC_Timkiem1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frChatLieu.resx">
       <DependentUpon>frChatLieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frDangNhap.resx">
+      <DependentUpon>frDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frDashBoard.resx">
+      <DependentUpon>frDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frDMHanghoa.resx">
       <DependentUpon>frDMHanghoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frDoiMatKhau.resx">
+      <DependentUpon>frDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frHoaDonBan.resx">
       <DependentUpon>frHoaDonBan.cs</DependentUpon>
@@ -228,6 +332,9 @@
     <EmbeddedResource Include="frReport4.resx">
       <DependentUpon>frReport4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frTaiKhoan.resx">
+      <DependentUpon>frTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frTimKiemHang.resx">
       <DependentUpon>frTimKiemHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +349,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="Report1.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -255,6 +363,51 @@
     <Content Include="Report4.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="UC_Baocao_Doanhthu.resx">
+      <DependentUpon>UC_Baocao_Doanhthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Baocao_Hoadonnhap.resx">
+      <DependentUpon>UC_Baocao_Hoadonnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Baocao_NCC.resx">
+      <DependentUpon>UC_Baocao_NCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Baocao_Sanpham.resx">
+      <DependentUpon>UC_Baocao_Sanpham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Baocao.resx">
+      <DependentUpon>UC_Baocao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Hanghoa.resx">
+      <DependentUpon>UC_Hanghoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Hoadonban.resx">
+      <DependentUpon>UC_Hoadonban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Hoadonnhap.resx">
+      <DependentUpon>UC_Hoadonnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Khachhang.resx">
+      <DependentUpon>UC_Khachhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Nhanvien.resx">
+      <DependentUpon>UC_Nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Search_Hoadonnhap.resx">
+      <DependentUpon>UC_Search_Hoadonnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Search_Hanghoa.resx">
+      <DependentUpon>UC_Search_Hanghoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Timkiem.resx">
+      <DependentUpon>UC_Timkiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Timkiem1.resx">
+      <DependentUpon>UC_Timkiem1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -287,27 +440,16 @@
     <None Include="QLBanHangDienTu_bantestDataSet1.xss">
       <DependentUpon>QLBanHangDienTu_bantestDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="QLBanHangDienTu_bantestDataSet2.xsc">
-      <DependentUpon>QLBanHangDienTu_bantestDataSet2.xsd</DependentUpon>
+    <None Include="TOP3PRODUCTBESTSALE.xsc">
+      <DependentUpon>TOP3PRODUCTBESTSALE.xsd</DependentUpon>
     </None>
-    <None Include="QLBanHangDienTu_bantestDataSet2.xsd">
+    <None Include="TOP3PRODUCTBESTSALE.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBanHangDienTu_bantestDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>TOP3PRODUCTBESTSALE.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QLBanHangDienTu_bantestDataSet2.xss">
-      <DependentUpon>QLBanHangDienTu_bantestDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="QLBanHangDienTu_bantestDataSet3.xsc">
-      <DependentUpon>QLBanHangDienTu_bantestDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="QLBanHangDienTu_bantestDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBanHangDienTu_bantestDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBanHangDienTu_bantestDataSet3.xss">
-      <DependentUpon>QLBanHangDienTu_bantestDataSet3.xsd</DependentUpon>
+    <None Include="TOP3PRODUCTBESTSALE.xss">
+      <DependentUpon>TOP3PRODUCTBESTSALE.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -364,6 +506,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\list-2-24.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

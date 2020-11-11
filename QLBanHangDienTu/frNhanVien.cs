@@ -70,8 +70,8 @@ namespace QLBanHangDienTu
 
         private void cbbMaca_DropDown(object sender, EventArgs e)
         {
-           /* DataTable tbnv = BLL_getData.getTable("pro_getAllNhanvien");
-            fillComboBox(tbnv, cbbMaca, "MaNV", "Tennhanvien");*/
+            DataTable tbnv = BLL_getData.getTable("pro_getAllNhanvien");
+            fillComboBox(tbnv, cbbMaca, "MaNV", "Tennhanvien");
         }
         private void fillComboBox(DataTable table, ComboBox cmb, string ma, string ten)
         {
@@ -153,8 +153,8 @@ namespace QLBanHangDienTu
                 dtpNgaysinh.Value,
                 txtDienthoai.Text,
                 txtDiachi.Text,
-                cbbMaca.Text,
-                cbbMacv.Text
+                cbbMaca.SelectedValue.ToString(),
+                cbbMacv.SelectedValue.ToString()
                 );
 
             BLL_NhanVien.update(obj_NhanVien);

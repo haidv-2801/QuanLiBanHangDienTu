@@ -82,7 +82,6 @@ namespace QLBanHangDienTu
 
         private void FrHoaDonNhap_Load(object sender, EventArgs e)
         {
-          
             showHDN();
             boxControl("");
             btnControl(false);
@@ -470,29 +469,21 @@ namespace QLBanHangDienTu
                 else { MessageBox.Show("Chỉ có thể xóa trong giỏ hàng!"); }
             }
         }
-        private void Sua_Click(object sender, EventArgs e)
-        {
-            if(idOfRowForDel >= 0 && idOfRowForDel < tbTemp.Rows.Count)
-            {
-                string mh = tbHDN.Rows[idOfRowForDel].Cells["Mã hàng"].Value.ToString();
-                var obj = listCTHDBTemp.FirstOrDefault(x => x.MaHang1 == mh);
-
-                if (listCTHDBTemp.Count > 0)
-                {
-                    obj.SoLuong1 = int.Parse(txtSoluong.Text);
-                    obj.GiamGia1 = int.Parse(txtGiamgia.Text);
-                }
-
-                updateTableTemp();
-                MessageBox.Show($"Sửa thành công mã hàng {mh}!");
-            }
-
-        }
 
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             frTimKiemHDN frhdn = new frTimKiemHDN();
             frhdn.Show();
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbHDN_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void CbbMaNCC_DropDown(object sender, EventArgs e)
