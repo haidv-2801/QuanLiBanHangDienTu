@@ -22,8 +22,8 @@ namespace DAL
 
             cmd.Parameters.AddWithValue("@TenTaiKhoan", taiKhoan.TenTaiKhoan);
             cmd.Parameters.AddWithValue("@MatKhau", taiKhoan.MatKhau);
-            cmd.Parameters.AddWithValue("@PhanQuyen", taiKhoan.PhanQuyen);
-            cmd.Parameters.AddWithValue("@MaNV", taiKhoan.MaNV);
+            cmd.Parameters.AddWithValue("@Trangthai", taiKhoan.TrangThai);
+            cmd.Parameters.AddWithValue("@Quyen", taiKhoan.PhanQuyen);
 
             mycon.Open();
             cmd.ExecuteNonQuery();
@@ -48,8 +48,8 @@ namespace DAL
 
             cmd.Parameters.AddWithValue("@TenTaiKhoan", taiKhoan.TenTaiKhoan);
             cmd.Parameters.AddWithValue("@MatKhau", taiKhoan.MatKhau);
-            cmd.Parameters.AddWithValue("@PhanQuyen", taiKhoan.PhanQuyen);
-            cmd.Parameters.AddWithValue("@MaNV", taiKhoan.MaNV);
+            cmd.Parameters.AddWithValue("@Trangthai", taiKhoan.TrangThai);
+            cmd.Parameters.AddWithValue("@Quyen", taiKhoan.PhanQuyen);
 
 
             mycon.Open();

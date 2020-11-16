@@ -10,27 +10,28 @@ namespace Object
     {
         private String tenTaiKhoan;
         private String matKhau;
-        private String maNV;
+        private int trangThai;
         private int phanQuyen;
+
+        public TaiKhoan(string tenTaiKhoan, string matKhau, int trangThai, int phanQuyen)
+        {
+            this.tenTaiKhoan = tenTaiKhoan;
+            this.matKhau = matKhau;
+            this.trangThai = trangThai;
+            this.phanQuyen = phanQuyen;
+        }
 
         public TaiKhoan()
         {
             this.tenTaiKhoan = "";
             this.matKhau = "";
-            this.maNV = "";
-            this.phanQuyen = -1;
-        }
-        public TaiKhoan(string tenTaiKhoan, string matKhau, int phanQuyen, string maNV)
-        {
-            this.tenTaiKhoan = tenTaiKhoan;
-            this.matKhau = matKhau;
-            this.maNV = maNV;
-            this.phanQuyen = phanQuyen;
+            this.trangThai = 0;
+            this.phanQuyen = 0;
         }
 
         public string TenTaiKhoan { get => tenTaiKhoan; set => tenTaiKhoan = value; }
         public string MatKhau { get => matKhau; set => matKhau = value; }
-        public string MaNV { get => maNV; set => maNV = value; }
+        public int TrangThai { get => trangThai; set => trangThai = value; }
         public int PhanQuyen { get => phanQuyen; set => phanQuyen = value; }
     }
 }

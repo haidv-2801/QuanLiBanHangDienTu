@@ -63,8 +63,8 @@ namespace QLBanHangDienTu
             {
                 string userName = tb.Rows[0][0].ToString();
                 string passWord = tb.Rows[0][1].ToString();
-                string per = tb.Rows[0][2].ToString();
-                string mnv = tb.Rows[0][3].ToString();
+                string status = tb.Rows[0][2].ToString();
+                string role = tb.Rows[0][3].ToString();
 
                 if (passWord != txtMkcu.Text)
                 {
@@ -84,8 +84,8 @@ namespace QLBanHangDienTu
                 TaiKhoan taiKhoan = new TaiKhoan(
                     txtTaikhoan.Text,
                     txtMkmoi4.Text,
-                    int.Parse(per),
-                    mnv
+                    int.Parse(status),
+                    int.Parse(role)
                     );
                 BLL_TaiKhoan.update(taiKhoan);
                 MessageBox.Show($"Cập nhật thành công {txtTaikhoan.Text}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

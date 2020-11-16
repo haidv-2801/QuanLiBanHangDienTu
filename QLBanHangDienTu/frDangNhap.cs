@@ -77,13 +77,13 @@ namespace QLBanHangDienTu
                 {
                     string userName = tb.Rows[0][0].ToString();
                     string passWord = tb.Rows[0][1].ToString();
-                    string permission = tb.Rows[0][2].ToString();
-                    string mnv = tb.Rows[0][3].ToString();
+                    string status = tb.Rows[0][2].ToString();
+                    string role = tb.Rows[0][3].ToString();
 
                     taiKhoan.TenTaiKhoan = userName;
                     taiKhoan.MatKhau = passWord;
-                    taiKhoan.PhanQuyen = int.Parse(permission);
-                    taiKhoan.MaNV = mnv;
+                    taiKhoan.TrangThai = int.Parse(status);
+                    taiKhoan.PhanQuyen = int.Parse(role);
 
                     // MessageBox.Show("test");
                     this.Hide();

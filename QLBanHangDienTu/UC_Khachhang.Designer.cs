@@ -38,7 +38,7 @@
             this.txtTenkh = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.rtbDiachi = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtDienthoai = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.button4 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnXoa = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSua = new Bunifu.Framework.UI.BunifuThinButton2();
             this.button1 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.button3 = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -177,31 +177,31 @@
             this.txtDienthoai.TabIndex = 57;
             this.txtDienthoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // button4
+            // btnXoa
             // 
-            this.button4.ActiveBorderThickness = 1;
-            this.button4.ActiveCornerRadius = 5;
-            this.button4.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button4.ActiveForecolor = System.Drawing.Color.White;
-            this.button4.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.ButtonText = "Xóa";
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button4.IdleBorderThickness = 1;
-            this.button4.IdleCornerRadius = 20;
-            this.button4.IdleFillColor = System.Drawing.Color.White;
-            this.button4.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button4.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button4.Location = new System.Drawing.Point(949, 319);
-            this.button4.Margin = new System.Windows.Forms.Padding(5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 42);
-            this.button4.TabIndex = 58;
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.button4.Click += new System.EventHandler(this.btnXoa_Click);
+            this.btnXoa.ActiveBorderThickness = 1;
+            this.btnXoa.ActiveCornerRadius = 5;
+            this.btnXoa.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnXoa.ActiveForecolor = System.Drawing.Color.White;
+            this.btnXoa.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnXoa.BackColor = System.Drawing.Color.White;
+            this.btnXoa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.BackgroundImage")));
+            this.btnXoa.ButtonText = "Xóa";
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnXoa.IdleBorderThickness = 1;
+            this.btnXoa.IdleCornerRadius = 20;
+            this.btnXoa.IdleFillColor = System.Drawing.Color.White;
+            this.btnXoa.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnXoa.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnXoa.Location = new System.Drawing.Point(949, 319);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(5);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(127, 42);
+            this.btnXoa.TabIndex = 58;
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -334,7 +334,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
@@ -371,8 +371,8 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtTenkh;
         private Bunifu.Framework.UI.BunifuMaterialTextbox rtbDiachi;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtDienthoai;
-        private Bunifu.Framework.UI.BunifuThinButton2 button4;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnSua;
+        public Bunifu.Framework.UI.BunifuThinButton2 btnXoa;
+        public Bunifu.Framework.UI.BunifuThinButton2 btnSua;
         private Bunifu.Framework.UI.BunifuThinButton2 button1;
         private Bunifu.Framework.UI.BunifuThinButton2 button3;
         private Bunifu.Framework.UI.BunifuThinButton2 button5;

@@ -21,13 +21,24 @@ namespace QLBanHangDienTu
 
         private void frDashBoard_Load(object sender, EventArgs e)
         {
+
             username.Text = frDangNhap.taiKhoan.TenTaiKhoan;
             role.Text = frDangNhap.taiKhoan.PhanQuyen == 0 ? "Admin" : "Nhân viên";
+
+            if(role.Text == "Admin") { control(true); }
+            else { control(false); }
 
             UC_Home uC_Home = new UC_Home();
             pnBody.Controls.Add(uC_Home);
 
             timer1.Start();
+        }
+
+        private void control(bool status)
+        {
+            btnHanghoa.Enabled = status;
+            btnNhanvien.Enabled = status;
+            btnBaocao.Enabled = status;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
