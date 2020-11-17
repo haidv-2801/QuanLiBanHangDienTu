@@ -24,7 +24,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@Tenhang", hangHoaObj.TenHang1);
             cmd.Parameters.AddWithValue("@Soluong", hangHoaObj.SoLuong1);
             cmd.Parameters.AddWithValue("@Dongianhap", hangHoaObj.DonGiaNhap1);
-            cmd.Parameters.AddWithValue("@Dongiaban", hangHoaObj.DonGiaBan1);
+           // cmd.Parameters.AddWithValue("@Dongiaban", hangHoaObj.DonGiaBan1);
 
 
             cmd.Parameters.AddWithValue("@Manhom", hangHoaObj.MaNhom1);
@@ -64,7 +64,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@Tenhang", hangHoaObj.TenHang1);
             cmd.Parameters.AddWithValue("@Soluong", hangHoaObj.SoLuong1);
             cmd.Parameters.AddWithValue("@Dongianhap", hangHoaObj.DonGiaNhap1);
-            cmd.Parameters.AddWithValue("@Dongiaban", hangHoaObj.DonGiaBan1);
+           // cmd.Parameters.AddWithValue("@Dongiaban", hangHoaObj.DonGiaBan1);
 
 
             cmd.Parameters.AddWithValue("@Manhom", hangHoaObj.MaNhom1);

@@ -50,7 +50,7 @@ namespace QLBanHangDienTu
                txtTenhang.Text,
                int.Parse(txtSoluong.Text),
                float.Parse(txtDonggianhap.Text),
-               float.Parse(txtDongiaban.Text),
+              
                cbbManhom.SelectedValue.ToString(),
                cbbMaloai.SelectedValue.ToString(),
                cbbMadonvi.SelectedValue.ToString(),
@@ -233,7 +233,7 @@ namespace QLBanHangDienTu
         private void Button3_Click(object sender, EventArgs e)
         {
             txtDonggianhap.Text = "";
-            txtDongiaban.Text = "";
+           // txtDongiaban.Text = "";
             txtGhichu.Text = "";
             txtMahang.Text = "";
             txtSoluong.Text = "";
@@ -257,7 +257,7 @@ namespace QLBanHangDienTu
                 txtTenhang.Text = dataGridView1.Rows[index].Cells["Tenhang"].Value.ToString();
                 txtSoluong.Text = dataGridView1.Rows[index].Cells["Soluong"].Value.ToString();
                 txtDonggianhap.Text = dataGridView1.Rows[index].Cells["Dongianhap"].Value.ToString();
-                txtDongiaban.Text = dataGridView1.Rows[index].Cells["Dongiaban"].Value.ToString();
+               // txtDongiaban.Text = dataGridView1.Rows[index].Cells["Dongiaban"].Value.ToString();
 
                 /*show combobox*/
                 //  DataGridViewRow canRows = dataGridView1.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[0].Value.ToString() == txtMahang.Text);
@@ -308,16 +308,16 @@ namespace QLBanHangDienTu
             return arrByte;
         }
 
-        private void TextBox4_TextChanged(object sender, EventArgs e)
+        /*private void TextBox4_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDonggianhap.Text) == false)
+            try
             {
                 float dongianhap = float.Parse(txtDonggianhap.Text);
                 float dongiaban = dongianhap + (dongianhap * 1 / 10);
-                txtDongiaban.Text = ((Decimal)dongiaban).ToString();
+               // txtDongiaban.Text = ((Decimal)dongiaban).ToString();
             }
-
-        }
+            catch { //txtDongiaban.Text = "0"; }
+        }*/
 
         DataTable tbnhom, tbloai, tbdv, tbcl, tbnsx;
 
@@ -373,7 +373,7 @@ namespace QLBanHangDienTu
                 e.Handled = true;
         }
 
-        private void txtSoluong_OnValueChanged(object sender, EventArgs e)
+       /* private void txtSoluong_OnValueChanged(object sender, EventArgs e)
         {
             float dongianhap = 0;
             decimal dongiaban = 0;
@@ -382,7 +382,7 @@ namespace QLBanHangDienTu
             catch { }
 
             txtDongiaban.Text = dongiaban.ToString();
-        }
+        }*/
 
         private void txtThoigianbaohanh_OnValueChanged(object sender, EventArgs e)
         {
@@ -410,13 +410,13 @@ namespace QLBanHangDienTu
         }
 
 
-        private void btnTimkiem_Click(object sender, EventArgs e)
+      /*  private void btnTimkiem_Click(object sender, EventArgs e)
         {
-            /*  if (this.MdiChildren.FirstOrDefault() != null)
-                  this.MdiChildren.FirstOrDefault().Close();*/
+            *//*  if (this.MdiChildren.FirstOrDefault() != null)
+                  this.MdiChildren.FirstOrDefault().Close();*//*
             frTimKiemHang frtk = new frTimKiemHang();
             frtk.Show();
-        }
+        }*/
 
         private void fillComboBox(DataTable table, ComboBox cmb, string ma, string ten)
         {

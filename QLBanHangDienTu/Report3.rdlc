@@ -9,11 +9,18 @@
       </ConnectionProperties>
       <rd:DataSourceID>d6b4531b-5996-4b4c-8cf6-fdc9a3d3a55b</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="QLBanHangDienTu_bantestDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>1067a32c-fed8-45c0-a810-e230683df7f1</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>QLBanHangDienTu_bantestDataSet1</DataSourceName>
+        <DataSourceName>QLBanHangDienTu_bantestDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -23,12 +30,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>QLBanHangDienTu_bantestDataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\QuanLiBanHangDienTu\QLBanHangDienTu\QLBanHangDienTu_bantestDataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>pro_getDataForQuestion8</rd:TableName>
+        <rd:DataSetName>QLBanHangDienTu_bantestDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\QuanLiBanHangDienTu\QLBanHangDienTu\QLBanHangDienTu_bantestDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>DoanhThuTheoQuy</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>pro_getDataForQuestion8TableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>DoanhThuTheoQuyTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -144,7 +151,7 @@
             <DataSetName>DataSet1</DataSetName>
             <Top>0.55834in</Top>
             <Left>2.32167in</Left>
-            <Height>0.63333in</Height>
+            <Height>0.63334in</Height>
             <Width>1.84167in</Width>
             <Style>
               <Border>

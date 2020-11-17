@@ -2,18 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="TOP3PRODUCTBESTSALE">
+    <DataSource Name="QLBanHangDienTu_bantestDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>9705b360-fd56-4718-b96d-697ec4882713</rd:DataSourceID>
+      <rd:DataSourceID>bb0b616f-882c-400d-b63e-34ef9d59e9b5</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>TOP3PRODUCTBESTSALE</DataSourceName>
+        <DataSourceName>QLBanHangDienTu_bantestDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -31,12 +31,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>TOP3PRODUCTBESTSALE</rd:DataSetName>
-        <rd:SchemaPath>D:\QuanLiBanHangDienTu\QLBanHangDienTu\TOP3PRODUCTBESTSALE.xsd</rd:SchemaPath>
-        <rd:TableName>Top3ProductBestSale</rd:TableName>
+        <rd:DataSetName>QLBanHangDienTu_bantestDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\QuanLiBanHangDienTu\QLBanHangDienTu\QLBanHangDienTu_bantestDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Top3SanPhamBanNhieuNhat</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>Top3ProductBestSaleTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>Top3SanPhamBanNhieuNhatTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -94,7 +94,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -130,7 +129,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -166,7 +164,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -207,7 +204,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -243,7 +239,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -279,7 +274,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -307,7 +301,7 @@
             <Top>0.325in</Top>
             <Left>1.33833in</Left>
             <Height>1.05in</Height>
-            <Width>7.15in</Width>
+            <Width>7.14999in</Width>
             <Style>
               <Border>
                 <Style>None</Style>

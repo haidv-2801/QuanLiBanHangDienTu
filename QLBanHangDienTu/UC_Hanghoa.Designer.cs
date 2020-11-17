@@ -35,7 +35,6 @@
             this.cbbMaloai = new System.Windows.Forms.ComboBox();
             this.cbbMadonvi = new System.Windows.Forms.ComboBox();
             this.cbbManhom = new System.Windows.Forms.ComboBox();
-            this.txtDongiaban = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtMahang = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtGhichu = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtThoigianbaohanh = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -61,7 +60,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ptbAnh = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,7 +78,6 @@
             this.panel1.Controls.Add(this.cbbMaloai);
             this.panel1.Controls.Add(this.cbbMadonvi);
             this.panel1.Controls.Add(this.cbbManhom);
-            this.panel1.Controls.Add(this.txtDongiaban);
             this.panel1.Controls.Add(this.txtMahang);
             this.panel1.Controls.Add(this.txtGhichu);
             this.panel1.Controls.Add(this.txtThoigianbaohanh);
@@ -99,7 +96,6 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -115,7 +111,7 @@
             this.cbbManuocsx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbManuocsx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.cbbManuocsx.FormattingEnabled = true;
-            this.cbbManuocsx.Location = new System.Drawing.Point(646, 210);
+            this.cbbManuocsx.Location = new System.Drawing.Point(632, 154);
             this.cbbManuocsx.Name = "cbbManuocsx";
             this.cbbManuocsx.Size = new System.Drawing.Size(230, 28);
             this.cbbManuocsx.TabIndex = 57;
@@ -127,7 +123,7 @@
             this.cbbMachatlieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbMachatlieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.cbbMachatlieu.FormattingEnabled = true;
-            this.cbbMachatlieu.Location = new System.Drawing.Point(646, 163);
+            this.cbbMachatlieu.Location = new System.Drawing.Point(632, 107);
             this.cbbMachatlieu.Name = "cbbMachatlieu";
             this.cbbMachatlieu.Size = new System.Drawing.Size(230, 28);
             this.cbbMachatlieu.TabIndex = 58;
@@ -151,7 +147,7 @@
             this.cbbMadonvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbMadonvi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.cbbMadonvi.FormattingEnabled = true;
-            this.cbbMadonvi.Location = new System.Drawing.Point(646, 108);
+            this.cbbMadonvi.Location = new System.Drawing.Point(632, 52);
             this.cbbMadonvi.Name = "cbbMadonvi";
             this.cbbMadonvi.Size = new System.Drawing.Size(230, 28);
             this.cbbMadonvi.TabIndex = 55;
@@ -168,27 +164,6 @@
             this.cbbManhom.Size = new System.Drawing.Size(230, 28);
             this.cbbManhom.TabIndex = 56;
             this.cbbManhom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dontChangeValue);
-            // 
-            // txtDongiaban
-            // 
-            this.txtDongiaban.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDongiaban.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDongiaban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.txtDongiaban.HintForeColor = System.Drawing.Color.Empty;
-            this.txtDongiaban.HintText = "";
-            this.txtDongiaban.isPassword = false;
-            this.txtDongiaban.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtDongiaban.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.txtDongiaban.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.txtDongiaban.LineThickness = 4;
-            this.txtDongiaban.Location = new System.Drawing.Point(646, 44);
-            this.txtDongiaban.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDongiaban.Name = "txtDongiaban";
-            this.txtDongiaban.Size = new System.Drawing.Size(230, 28);
-            this.txtDongiaban.TabIndex = 54;
-            this.txtDongiaban.Text = "0";
-            this.txtDongiaban.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDongiaban.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dontChangeValue);
             // 
             // txtMahang
             // 
@@ -222,7 +197,7 @@
             this.txtGhichu.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.txtGhichu.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.txtGhichu.LineThickness = 4;
-            this.txtGhichu.Location = new System.Drawing.Point(649, 306);
+            this.txtGhichu.Location = new System.Drawing.Point(635, 250);
             this.txtGhichu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGhichu.Name = "txtGhichu";
             this.txtGhichu.Size = new System.Drawing.Size(230, 28);
@@ -241,7 +216,7 @@
             this.txtThoigianbaohanh.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.txtThoigianbaohanh.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.txtThoigianbaohanh.LineThickness = 4;
-            this.txtThoigianbaohanh.Location = new System.Drawing.Point(649, 258);
+            this.txtThoigianbaohanh.Location = new System.Drawing.Point(635, 202);
             this.txtThoigianbaohanh.Margin = new System.Windows.Forms.Padding(4);
             this.txtThoigianbaohanh.Name = "txtThoigianbaohanh";
             this.txtThoigianbaohanh.Size = new System.Drawing.Size(230, 28);
@@ -267,7 +242,6 @@
             this.txtDonggianhap.Size = new System.Drawing.Size(230, 28);
             this.txtDonggianhap.TabIndex = 52;
             this.txtDonggianhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDonggianhap.OnValueChanged += new System.EventHandler(this.TextBox4_TextChanged);
             this.txtDonggianhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonggianhap_KeyPress);
             // 
             // txtSoluong
@@ -288,7 +262,6 @@
             this.txtSoluong.Size = new System.Drawing.Size(230, 28);
             this.txtSoluong.TabIndex = 52;
             this.txtSoluong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSoluong.OnValueChanged += new System.EventHandler(this.txtSoluong_OnValueChanged);
             this.txtSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoluong_KeyPress);
             // 
             // txtTenhang
@@ -504,7 +477,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(520, 309);
+            this.label12.Location = new System.Drawing.Point(506, 253);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 25);
             this.label12.TabIndex = 48;
@@ -514,7 +487,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(477, 268);
+            this.label11.Location = new System.Drawing.Point(463, 212);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(125, 25);
             this.label11.TabIndex = 46;
@@ -524,7 +497,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(481, 220);
+            this.label10.Location = new System.Drawing.Point(467, 164);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(121, 25);
             this.label10.TabIndex = 44;
@@ -534,7 +507,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(488, 164);
+            this.label9.Location = new System.Drawing.Point(474, 108);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(117, 25);
             this.label9.TabIndex = 43;
@@ -554,7 +527,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(502, 107);
+            this.label8.Location = new System.Drawing.Point(488, 51);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(97, 25);
             this.label8.TabIndex = 38;
@@ -599,16 +572,6 @@
             this.label3.Size = new System.Drawing.Size(90, 25);
             this.label3.TabIndex = 26;
             this.label3.Text = "Số lượng";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(488, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 25);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Đơn giá bán";
             // 
             // label4
             // 
@@ -679,7 +642,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtSoluong;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtDonggianhap;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtMahang;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtDongiaban;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtGhichu;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtThoigianbaohanh;
         private Bunifu.Framework.UI.BunifuThinButton2 button6;
@@ -690,7 +652,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox ptbAnh;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbbManuocsx;
         private System.Windows.Forms.ComboBox cbbMachatlieu;
         private System.Windows.Forms.ComboBox cbbMaloai;

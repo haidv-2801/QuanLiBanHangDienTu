@@ -12,7 +12,7 @@ namespace Object
         private string TenHang;
         private int SoLuong;
         private float DonGiaNhap;
-        private float DonGiaBan;
+        
         private string MaNhom;
         private string MaLoai;
         private string MaDonVi;
@@ -22,13 +22,12 @@ namespace Object
         private string GhiChu;
         private byte[] Anh;
 
-        public Obj_HangHoa(string maHang, string tenHang, int soLuong, float donGiaNhap, float donGiaBan, string maNhom, string maLoai, string maDonVi, string maChatLieu, string maNuocSX, int thoiGianBH, string ghiChu, byte[] anh)
+        public Obj_HangHoa(string maHang, string tenHang, int soLuong, float donGiaNhap, string maNhom, string maLoai, string maDonVi, string maChatLieu, string maNuocSX, int thoiGianBH, string ghiChu, byte[] anh)
         {
             MaHang = maHang;
             TenHang = tenHang;
             SoLuong = soLuong;
             DonGiaNhap = donGiaNhap;
-            DonGiaBan = donGiaBan;
             MaNhom = maNhom;
             MaLoai = maLoai;
             MaDonVi = maDonVi;
@@ -43,7 +42,6 @@ namespace Object
         public string TenHang1 { get => TenHang; set => TenHang = value; }
         public int SoLuong1 { get => SoLuong; set => SoLuong = value; }
         public float DonGiaNhap1 { get => DonGiaNhap; set => DonGiaNhap = value; }
-        public float DonGiaBan1 { get => DonGiaBan; set => DonGiaBan = value; }
         public string MaNhom1 { get => MaNhom; set => MaNhom = value; }
         public string MaLoai1 { get => MaLoai; set => MaLoai = value; }
         public string MaDonVi1 { get => MaDonVi; set => MaDonVi = value; }

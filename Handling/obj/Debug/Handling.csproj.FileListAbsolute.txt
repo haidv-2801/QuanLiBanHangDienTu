@@ -12,3 +12,10 @@ D:\Csharp\Handling\obj\Debug\Handling.csprojAssemblyReference.cache
 D:\Csharp\Handling\obj\Debug\Handling.csproj.CoreCompileInputs.cache
 D:\Csharp\Handling\obj\Debug\Handling.exe
 D:\Csharp\Handling\obj\Debug\Handling.pdb
+D:\QuanLiBanHangDienTu\Handling\bin\Debug\Handling.exe.config
+D:\QuanLiBanHangDienTu\Handling\bin\Debug\Handling.exe
+D:\QuanLiBanHangDienTu\Handling\bin\Debug\Handling.pdb
+D:\QuanLiBanHangDienTu\Handling\obj\Debug\Handling.csprojAssemblyReference.cache
+D:\QuanLiBanHangDienTu\Handling\obj\Debug\Handling.csproj.CoreCompileInputs.cache
+D:\QuanLiBanHangDienTu\Handling\obj\Debug\Handling.exe
+D:\QuanLiBanHangDienTu\Handling\obj\Debug\Handling.pdb

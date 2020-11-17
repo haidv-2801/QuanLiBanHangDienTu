@@ -9,11 +9,18 @@
       </ConnectionProperties>
       <rd:DataSourceID>450cab99-df08-4be7-aa34-e3b2a377b0db</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="QLBanHangDienTu_bantestDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a77000c6-7e83-4e18-847f-0dd6cef77f7e</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>QLBanHangDienTu_bantestDataSet1</DataSourceName>
+        <DataSourceName>QLBanHangDienTu_bantestDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -35,12 +42,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>QLBanHangDienTu_bantestDataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Csharp\QLBanHangDienTu\QLBanHangDienTu_bantestDataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>pro_getDataForQuestion9</rd:TableName>
+        <rd:DataSetName>QLBanHangDienTu_bantestDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\QuanLiBanHangDienTu\QLBanHangDienTu\QLBanHangDienTu_bantestDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>NCCKhongGiaoHang</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>pro_getDataForQuestion9TableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>NCCKhongGiaoHangTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

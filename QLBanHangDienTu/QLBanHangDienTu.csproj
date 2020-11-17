@@ -75,12 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frChatLieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frChatLieu.Designer.cs">
-      <DependentUpon>frChatLieu.cs</DependentUpon>
-    </Compile>
     <Compile Include="frDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,48 +92,6 @@
     </Compile>
     <Compile Include="frDoiMatKhau.Designer.cs">
       <DependentUpon>frDoiMatKhau.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frHoaDonBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frHoaDonBan.Designer.cs">
-      <DependentUpon>frHoaDonBan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frKhachHang.Designer.cs">
-      <DependentUpon>frKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frNhanVien.Designer.cs">
-      <DependentUpon>frNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frHoaDonNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frHoaDonNhap.Designer.cs">
-      <DependentUpon>frHoaDonNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frMain.Designer.cs">
-      <DependentUpon>frMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frDMHanghoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frDMHanghoa.Designer.cs">
-      <DependentUpon>frDMHanghoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frNhaCungCap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frNhaCungCap.Designer.cs">
-      <DependentUpon>frNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="frReport1.cs">
       <SubType>Form</SubType>
@@ -171,18 +123,6 @@
     <Compile Include="frTaiKhoan.Designer.cs">
       <DependentUpon>frTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frTimKiemHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frTimKiemHang.Designer.cs">
-      <DependentUpon>frTimKiemHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frTimKiemHDN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frTimKiemHDN.Designer.cs">
-      <DependentUpon>frTimKiemHDN.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLBanHangDienTu_bantestDataSet.Designer.cs">
@@ -190,17 +130,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBanHangDienTu_bantestDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLBanHangDienTu_bantestDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBanHangDienTu_bantestDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="TOP3PRODUCTBESTSALE.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TOP3PRODUCTBESTSALE.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UC_Baocao_Doanhthu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -291,38 +221,14 @@
     <Compile Include="UC_Timkiem1.Designer.cs">
       <DependentUpon>UC_Timkiem1.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frChatLieu.resx">
-      <DependentUpon>frChatLieu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frDangNhap.resx">
       <DependentUpon>frDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frDashBoard.resx">
       <DependentUpon>frDashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frDMHanghoa.resx">
-      <DependentUpon>frDMHanghoa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frDoiMatKhau.resx">
       <DependentUpon>frDoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frHoaDonBan.resx">
-      <DependentUpon>frHoaDonBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frHoaDonNhap.resx">
-      <DependentUpon>frHoaDonNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frKhachHang.resx">
-      <DependentUpon>frKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frMain.resx">
-      <DependentUpon>frMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frNhaCungCap.resx">
-      <DependentUpon>frNhaCungCap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frNhanVien.resx">
-      <DependentUpon>frNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frReport1.resx">
       <DependentUpon>frReport1.cs</DependentUpon>
@@ -338,12 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frTaiKhoan.resx">
       <DependentUpon>frTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frTimKiemHang.resx">
-      <DependentUpon>frTimKiemHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frTimKiemHDN.resx">
-      <DependentUpon>frTimKiemHDN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -422,39 +322,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLBanHangDienTu_bantestDataSet.xsc">
-      <DependentUpon>QLBanHangDienTu_bantestDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLBanHangDienTu_bantestDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBanHangDienTu_bantestDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBanHangDienTu_bantestDataSet.xss">
-      <DependentUpon>QLBanHangDienTu_bantestDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLBanHangDienTu_bantestDataSet1.xsc">
-      <DependentUpon>QLBanHangDienTu_bantestDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="QLBanHangDienTu_bantestDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBanHangDienTu_bantestDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBanHangDienTu_bantestDataSet1.xss">
-      <DependentUpon>QLBanHangDienTu_bantestDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="TOP3PRODUCTBESTSALE.xsc">
-      <DependentUpon>TOP3PRODUCTBESTSALE.xsd</DependentUpon>
-    </None>
-    <None Include="TOP3PRODUCTBESTSALE.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TOP3PRODUCTBESTSALE.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TOP3PRODUCTBESTSALE.xss">
-      <DependentUpon>TOP3PRODUCTBESTSALE.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -510,6 +377,17 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLBanHangDienTu_bantestDataSet.xsc">
+      <DependentUpon>QLBanHangDienTu_bantestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBanHangDienTu_bantestDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBanHangDienTu_bantestDataSet.xss">
+      <DependentUpon>QLBanHangDienTu_bantestDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\list-2-24.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -20,6 +20,7 @@ namespace QLBanHangDienTu
         List<Obj_CTHoaDonBan> listCTHDBTemp = new List<Obj_CTHoaDonBan>();
 
         int idOfRowForDel = -1;
+        int cur_amount;
 
         public UC_Hoadonban()
         {
@@ -140,7 +141,7 @@ namespace QLBanHangDienTu
                         return;
                     else { listCTHDBTemp.Clear(); reset(); return; }
                 }
-                tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonnhap");
+                tbHDN.DataSource = BLL_getData.getTable("pro_getAllHoadonban");
             }
         }
 
@@ -206,13 +207,13 @@ namespace QLBanHangDienTu
         private void tbHDN_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            if (index >= 0 && index <= tbHDN.Rows.Count)
+            if (index >= 0 && index < tbHDN.Rows.Count - 1)
             {
                 try
                 {
-                    string id = tbHDN.Rows[index].Cells["SoHDN"].Value.ToString();
+                    string id = tbHDN.Rows[index].Cells["SoHDB"].Value.ToString();
                     //MessageBox.Show(id);
-                    tbHDN.DataSource = BLL_getData.getTableById("pro_getCTHDN_ById", id);
+                    tbHDN.DataSource = BLL_getData.getTableById("pro_getCTHDB_ById", id);
                     tbHDN.Columns[0].HeaderText = "Mã hàng";
                     tbHDN.Columns[1].HeaderText = "Tên hàng";
                     tbHDN.Columns[2].HeaderText = "Số lượng";
@@ -233,10 +234,20 @@ namespace QLBanHangDienTu
                 return;
 
             bool alreadyExists = listCTHDBTemp.Any(x => x.MaHang1 == cbbMahang.SelectedValue.ToString());
-           
+
             if (alreadyExists)
             {
                 MessageBox.Show($"Hàng {cbbMahang.Text} đã tồn tại!", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+
+            DataTable temp = BLL_getData.getTableById("pro_getHanghoaById", cbbMahang.SelectedValue.ToString());
+            if (temp.Rows.Count > 0)
+                cur_amount = temp.Rows[0].Field<int>("Soluong");
+
+            if (cur_amount - int.Parse(txtSoluong.Text) < 0)
+            {
+                MessageBox.Show($"{cbbMahang.Text.ToString()} còn {cur_amount} cái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -426,5 +437,5 @@ namespace QLBanHangDienTu
 
         /*Textchange*/
 
-    } 
+    }
 }
