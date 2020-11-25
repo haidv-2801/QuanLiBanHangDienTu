@@ -370,7 +370,7 @@ namespace QLBanHangDienTu
             if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
             if (txtDonggianhap.Text.Length > 12 && !char.IsControl(e.KeyChar))
-                e.Handled = true;
+                e.Handled = true;   
         }
 
        /* private void txtSoluong_OnValueChanged(object sender, EventArgs e)

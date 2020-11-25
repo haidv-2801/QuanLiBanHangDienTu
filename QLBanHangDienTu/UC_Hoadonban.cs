@@ -298,7 +298,7 @@ namespace QLBanHangDienTu
             if (tmp.Rows.Count > 0)
             {
                 txtTenhang.Text = tmp.Rows[0]["Tenhang"].ToString();
-                txtDongia.Text = tmp.Rows[0]["Dongianhap"].ToString();
+                txtDongia.Text = tmp.Rows[0]["Dongiaban"].ToString();
             }
         }
 
